@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import imagen from "../img/mapa.jpg"
 import "./Form.css"
+import GoBack from '../utils/GoBack';
 
 const Form = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -34,7 +35,7 @@ const Form = () => {
               <div className="form-group">
                 <label htmlFor="latitud">Latitud:</label>
                 <input
-                  type="number"
+                  type="text"
                   id="latitud"
                   {...register('latitud', { required: true })}
                   className={`form-input ${errors.latitud ? 'error' : ''}`}
@@ -44,7 +45,7 @@ const Form = () => {
               <div className="form-group">
                 <label htmlFor="longitud">Longitud:</label>
                 <input
-                  type="number"
+                  type="text"
                   id="longitud"
                   {...register('longitud', { required: true })}
                   className={`form-input ${errors.longitud ? 'error' : ''}`}
@@ -63,7 +64,7 @@ const Form = () => {
                 ( <p className='error-message'>{error}</p> )
             }
           </div>
-         
+          <GoBack/>
         </div>
       );
 };
