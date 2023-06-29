@@ -1,0 +1,19 @@
+.list-container {
+  background-color: #131e2f;
+  /* border: red 2px solid; */
+  border-radius: 5px;
+  width: 50%;
+  /* height: 100%; */
+  padding: 30px;
+}
+
+.list-title {
+  font-size: 2rem;
+  margin-bottom: 15px; /* CAMBIAR POR GAP */
+}
+
+.ubicaciones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
