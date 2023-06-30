@@ -1,8 +1,9 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 
-import Form from "./components/Form"
+import Form from "./components/Crear/Form"
 import Home from "./components/Home"
 import Ubicaciones from "./components/Ubicaciones"
+import Subscribe from "./components/Subscripcion/Subscribe"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/ubicaciones" element={<Ubicaciones/>}/>
       <Route path="/crear" element={<Form/>}/>
+      <Route path="/subscribir" element={<Subscribe/>}/>
     </Routes>
   </BrowserRouter>
   )
