@@ -1,9 +1,10 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import firebaseConfig from "../utils/FirebaseJson/firebaseConfig";
 
-import { initializeApp } from 'firebase/app';
-import { getDatabase } from 'firebase/database';
-import firebaseConfig from '../utils/FirebaseJson/ConfigFire.json';
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-const firebaseApp = initializeApp(firebaseConfig);
-const firebase = getDatabase(firebaseApp);
 
-export default firebase;
+export default analytics

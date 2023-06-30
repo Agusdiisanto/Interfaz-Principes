@@ -1,9 +1,12 @@
 
-//import Notificaciones from "./Notificaciones"
+import Notificaciones from "./Notificaciones"
 
 const Subscribe = () => {
   return (
+    <div>
     <h1>Subscripcion</h1>
+    <Notificaciones/>
+    </div>
   )
 }
 

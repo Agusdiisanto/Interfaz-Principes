@@ -1,25 +1,35 @@
-
 import { useEffect, useState } from 'react';
-import firebase from "../../services/firebase";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/database';
+
+import configFire from "../../utils/FirebaseJson/firebaseConfig";
+
+// Inicializa la app de Firebase
+if (!firebase.apps.length) {
+  firebase.initializeApp(configFire);
+}
 
 const Notificaciones = () => {
   const [consoleMessages, setConsoleMessages] = useState([]);
 
   useEffect(() => {
-    // Establece la referencia a la ubicación en Firebase Realtime Database donde se almacenan los datos
-    const dbRef = firebase.ref('ubicacion');
+    // Obtiene la referencia a la ubicación en Firebase Realtime Database donde se almacenan los datos
+    const dbRef = firebase.database().ref('ubicacion');
 
     // Manejador de evento para cuando se actualizan los datos en Firebase Realtime Database
-    dbRef.on('value', (snapshot) => {
+    const handleValueChange = (snapshot) => {
       const data = snapshot.val();
       const message = JSON.stringify(data);
 
       setConsoleMessages((prevMessages) => [...prevMessages, message]);
-    });
+    };
+
+    // Escucha los cambios en la referencia
+    dbRef.on('value', handleValueChange);
 
     // Desactiva el listener cuando el componente se desmonta
     return () => {
-      dbRef.off('value');
+      dbRef.off('value', handleValueChange);
     };
   }, []);
 
