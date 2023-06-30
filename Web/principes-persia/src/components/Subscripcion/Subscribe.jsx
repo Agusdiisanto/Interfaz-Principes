@@ -1,9 +1,9 @@
 
-import Notificaciones from "./Notificaciones"
+//import Notificaciones from "./Notificaciones"
 
 const Subscribe = () => {
   return (
-    <Notificaciones/>
+    <h1>Subscripcion</h1>
   )
 }
 
