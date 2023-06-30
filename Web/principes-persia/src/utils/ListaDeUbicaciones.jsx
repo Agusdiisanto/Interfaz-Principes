@@ -25,12 +25,6 @@ const ListaDeUbicaciones = () => {
     <div className="list-container">
       <h1 className="list-title">Ubicaciones</h1>
       <div className="ubicaciones-list">
-        {/* Ejemplos */}
-        <Ubicacion key="u1" ubicacion="u1" />
-        <Ubicacion key="u2" ubicacion="u2" />
-        <Ubicacion key="u3" ubicacion="u3" />
-        <Ubicacion key="u4" ubicacion="u4" />
-
         {ubicaciones &&
           ubicaciones.map((ubicacion) => (
             <Ubicacion

@@ -1,12 +1,22 @@
-.option-card {
-    background-color: #666666;
+.option-card { 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 4px rgba(255, 255, 255, 0.60);
     padding: 1rem;
     margin: 1.3rem;
     transition: transform 0.3s ease-in-out;
 }
+
+.option-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-icon svg{
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
 
 .option-card:hover{
     cursor: pointer;
@@ -23,4 +33,51 @@
 .option-card p {
   width: 100%;
   opacity: 0.65;
+}
+
+
+
+.option-crear{
+    background-color: #664675;
+    box-shadow: 0px 0px 10px 4px rgba(176, 72, 255, 0.6);
+}
+
+.option-search{
+    background-color: #41676e;
+    box-shadow: 0px 0px 10px 4px rgba(38, 162, 193, 0.6);
+}
+
+.option-all{
+    background-color: #5e6735;
+    box-shadow: 0px 0px 10px 4px rgba(235, 251, 114, 0.6);
+}
+
+.option-move{
+    background-color: #8a1b3e;
+    box-shadow: 0px 0px 10px 4px rgba(209, 7, 81, 0.6);
+}
+
+.option-shortMove{
+    background-color: #2e2a7c;
+    box-shadow: 0px 0px 10px 4px rgba(44, 1, 237, 0.6);
+}
+
+.option-connected{
+    background-color: #4c7236;
+    box-shadow: 0px 0px 10px 4px rgba(74, 193, 37, 0.6);
+}
+
+.option-connect{
+    background-color: #906a23;
+    box-shadow: 0px 0px 10px 4px rgba(255, 170, 0, 0.6);
+}
+
+.option-subscribe{
+    background-color: #802d80;
+    box-shadow: 0px 0px 10px 4px rgba(195, 0, 255, 0.6);
+}
+
+.option-desuscribe{
+    background-color: #8d1b1b;
+    box-shadow: 0px 0px 10px 4px rgba(255, 0, 0, 0.6);
 }
