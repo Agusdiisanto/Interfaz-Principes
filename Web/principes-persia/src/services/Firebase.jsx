@@ -1,9 +1,8 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
-import firebaseConfig from '../utils/FirebaseJson/Firebase.json';
+import { initializeApp } from 'firebase/app';
+import { getDatabase } from 'firebase/database';
+import firebaseConfig from '../utils/FirebaseJson/ConfigFire.json';
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+const firebaseApp = initializeApp(firebaseConfig);
+const firebase = getDatabase(firebaseApp);
 
 export default firebase;
