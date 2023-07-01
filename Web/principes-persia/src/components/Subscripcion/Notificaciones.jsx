@@ -12,6 +12,7 @@ if (!firebase.apps.length) {
 const Notificaciones = () => {
   const [consoleMessages, setConsoleMessages] = useState([]);
 
+  //debugger
   useEffect(() => {
     // Obtiene la referencia a la ubicación en Firebase Realtime Database donde se almacenan los datos
     const dbRef = firebase.database().ref('ubicacion');
