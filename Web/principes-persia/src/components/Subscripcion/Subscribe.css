@@ -1,0 +1,40 @@
+.container-suscripcion{
+    background-color: rgb(176,190,197);
+    min-height: 100vh;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 35px;
+}
+
+.title{
+    color: rgb(66,79,79);
+}
+
+.ubicacion-nombre{
+    color: rgb(66,79,79);
+    font-size: 12;
+    font-weight: bold;
+}
+
+.ubicacion-nombre input {
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+}
+
+.ubicacion-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.button-suscribirse{
+    margin-top: 10px;
+    border-radius: 32px;
+    height: 40px;
+    width: 130px;
+    background-color:rgb(66,79,79);
+    border: rgb(247,143,143);
+    color: white;
+    margin-top: 0.8%; 
+}

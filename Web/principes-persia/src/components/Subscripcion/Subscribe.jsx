@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Firebase from '../../services/Firebase';
 import { collection, doc, onSnapshot } from 'firebase/firestore';
+import "./Subscribe.css"
+
 
 const Subscribe = () => {
   const [ubicacion, setUbicacion] = useState('');
@@ -29,14 +31,14 @@ const Subscribe = () => {
   };
 
   return (
-    <div>
-      <h1>Subscripción</h1>
-      <form>
-        <label>
+    <div className="container-suscripcion">
+      <h1 className='title'>Subscripción</h1>
+      <form className="ubicacion-form">
+        <label className='ubicacion-nombre'>
           Ubicación:
           <input type="text" value={ubicacion} onChange={handleUbicacionChange} />
         </label>
-        <button type="button" onClick={handleSuscripcionToggle}>
+        <button className="button-suscribirse" type="button" onClick={handleSuscripcionToggle}>
           {suscripcion ? 'Cancelar Suscripción' : 'Suscribirse'}
         </button>
       </form>

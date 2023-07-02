@@ -5,7 +5,7 @@ import MapToList from "../utils/MapToList/MapToList";
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div>
       <h2 className=" animate__animated animate__pulse title-container">Home</h2>
       <div className="option-container">
         <h3>Seleccione una opción:</h3>
