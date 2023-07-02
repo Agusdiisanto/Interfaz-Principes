@@ -1,9 +1,7 @@
 .container-suscripcion{
     background-color: rgb(176,190,197);
-    min-height: 100vh;
-    margin: 30px;
-    padding: 30px;
-    border-radius: 35px;
+    min-height: 100vh; 
+    
 }
 
 .title{
