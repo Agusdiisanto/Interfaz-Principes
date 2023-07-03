@@ -10,39 +10,58 @@
 }
 
 .title{
-    color: rgb(78, 174, 174);
+    color: rgba(195, 0, 255, 0.6);
     padding: 0;
 }
 
 .ubicacion-nombre{
-    color: rgb(131, 193, 193);
+    color: white;
+    opacity: 0.4;
     font-size: 12;
     font-weight: bold;
 }
 
-.ubicacion-nombre input {
-    border-radius: 10px;
-    border: none;
-    height: 30px;
-    margin-left: 1rem;
-}
-
-.ubicacion-form {
+.ubicacion-fire{
     display: flex;
+    background-color: rgba(119, 119, 119, 0.4);
+    border-radius: 2rem;
+    width: 300px;
+    height: 100px;
+    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    padding: 2rem;
 }
 
-.button-suscribirse{
+.susbscribirte{
     border-radius: 32px;
     height: 35px;
-    width: 260px;
-    background-color:rgb(66,79,79);
-    
+    width: 100px;
+    background-color:rgb(65, 176, 0);
     color: white;
-    margin-top: 1.4rem; 
+    border: none;
+    transition: transform 0.3s ease-in-out;   
 }
 
-.button-suscribirse:hover{
-    background-color:rgb(247,143,143);
+.desubscribirte{
+    border-radius: 32px;
+    height: 35px;
+    width: 110px;
+    background-color:rgb(162, 0, 0);
+    color: white;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.susbscribirte:hover{
+    background-color:rgb(26, 121, 0);
     cursor: pointer;
+    transform: scale(1.1);
+}
+
+.desubscribirte:hover{
+    background-color:rgb(123, 0, 0);
+    cursor: pointer;
+    transform: scale(1.1);
 }

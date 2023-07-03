@@ -1,4 +1,4 @@
-import { faPlus, faSearch, faCodeBranch , faWalking , faLink, faBell, faBellSlash,faEarthAmericas,faRunning } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faSearch, faCodeBranch , faWalking , faLink, faBell,faEarthAmericas,faRunning } from '@fortawesome/free-solid-svg-icons';
 
 export const Options = [
   {
@@ -55,13 +55,6 @@ export const Options = [
     description: 'Suscríbete a una ubicación para recibir actualizaciones y notificaciones.',
     icon: faBell,
     className: 'option-subscribe',
-    path: 'subscribir',
-  },
-  {
-    label: 'Desuscribir',
-    description: 'Deja de recibir actualizaciones y notificaciones',
-    icon: faBellSlash,
-    className: 'option-desuscribe',
     path: 'subscribir',
   },
 ];

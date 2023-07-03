@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { doc, onSnapshot} from 'firebase/firestore';
 import { db } from "../../utils/FirebaseJson/configFirebase";
+import "./Notificaciones.css"
 
 const Notificaciones = ({ ubicacionId }) => {
   const [mensaje, setMensaje] = useState('');
@@ -22,11 +23,9 @@ const Notificaciones = ({ ubicacionId }) => {
 
   return (
     <div className="notificaciones-container">
-      <h1 className="notificaciones-title">Notificaciones</h1>
-      <div>
-        <h2>{mensaje.nombre}</h2>
-        <h3>{mensaje.alerta}</h3>
-        <h3>{mensaje.cantidadVectores}</h3>
+      <h1 className="notificaciones-title">Notificaciones : </h1>
+      <div className='notificacion-ubicacion'>
+      <h2>{mensaje.nombre}, esta en alerta <span className={mensaje.alerta}>{mensaje.alerta}</span> con {mensaje.cantidadVectores} vectores </h2>        
       </div>
     </div>
   );

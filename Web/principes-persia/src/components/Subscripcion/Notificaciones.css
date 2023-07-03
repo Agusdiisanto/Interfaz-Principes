@@ -1,12 +1,44 @@
 .notificaciones-container {
-  background-color: #131e2f;
-  /* border: red 2px solid; */
-  border-radius: 5px;
-  width: 45%;
-  padding: 30px;
+  background-color: #4e4e4e;
+  border: rgb(84, 84, 84) 2px solid; 
+  border-radius: 10px;
+  width: 95%;
+  margin-top: 4rem;
 }
 
 .notificaciones-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-size: 2rem;
-  margin-bottom: 15px; /* CAMBIAR POR GAP */
+  color: rgb(195, 0, 255); 
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.notificacion-ubicacion{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.separacion{
+  margin-bottom: 3px;
+  padding: 5px; 
+}
+
+.Verde{
+  color: green;
+  background-color: transparent !important;
+}
+
+.Rojo{
+  color: red;
+  background-color: transparent !important;
+}
+
+.Amarillo{
+  color: yellow !important;
+  background-color: transparent !important;
 }
