@@ -1,15 +1,21 @@
-.container-suscripcion{
-    background-color: rgb(176,190,197);
-    min-height: 100vh; 
-    
+.container-suscripcion {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    padding: 2rem;
+    margin: 3rem auto; /* Añadido para centrar horizontalmente */
 }
 
 .title{
-    color: rgb(66,79,79);
+    color: rgb(78, 174, 174);
+    padding: 0;
 }
 
 .ubicacion-nombre{
-    color: rgb(66,79,79);
+    color: rgb(131, 193, 193);
     font-size: 12;
     font-weight: bold;
 }
@@ -18,21 +24,25 @@
     border-radius: 10px;
     border: none;
     height: 30px;
+    margin-left: 1rem;
 }
 
 .ubicacion-form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 .button-suscribirse{
-    margin-top: 10px;
     border-radius: 32px;
-    height: 40px;
-    width: 130px;
+    height: 35px;
+    width: 260px;
     background-color:rgb(66,79,79);
-    border: rgb(247,143,143);
+    
     color: white;
-    margin-top: 0.8%; 
+    margin-top: 1.4rem; 
+}
+
+.button-suscribirse:hover{
+    background-color:rgb(247,143,143);
+    cursor: pointer;
 }

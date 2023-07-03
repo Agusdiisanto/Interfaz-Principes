@@ -6,5 +6,4 @@ import firebaseConfig from "../utils/FirebaseJson/firebaseConfig";
 const app = initializeApp(firebaseConfig);
 const Firebase = getFirestore(app);
 
-
-export default Firebase
+export default Firebase;

@@ -22,7 +22,7 @@ const Ubicaciones = () => {
 
   useEffect(() => {
     getUbicaciones();
-  }, []);
+  }, [ubicaciones]);
 
   return (
     <div className="ubicaciones-container">

@@ -15,10 +15,29 @@
 /* Estilos para cada ubicación */
 .ubicacion-card {
     color:rgb(255, 255, 255);
-    background-color:rgb(96, 95, 95);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.separador{
+  margin-bottom: 1rem;
+}
+
+.default{
+    background-color:rgb(66, 66, 66);
+}
+
+.Verde{
+  background-color:rgb(64, 159, 20);
+}
+
+.Rojo{
+  background-color:rgb(187, 9, 9);
+}
+
+.Amarillo{
+  background-color:rgb(176, 173, 3);
 }
 
 .ubicacion-card h4 {
@@ -30,4 +49,5 @@
 .ubicacion-card h6 {
     margin: 5px 0;
     font-size: 14px;
+    margin-bottom: 5px;
 }
