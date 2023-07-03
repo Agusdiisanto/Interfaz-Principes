@@ -36,18 +36,18 @@ const Subscribe = () => {
       <h1 className='title'>Subscribite a una Ubicacion</h1>
       <h3 className='ubicacion-nombre'>Al subscribirte a una ubicacion recibiras notificaciones</h3>
       <div className='ubicaciones-list'>
-        {ubicacion &&
-          ubicacion.map((ubicacion) => (
-            <div key={ubicacion.id} className='ubicacion-fire'>
-              <h2>{ubicacion.nombre}</h2>
-              <button className = {ubicacionSeleccionada === ubicacion.id ? 'desubscribirte' : 'susbscribirte'} onClick={() => handleSubscribe(ubicacion.id)}>
-                {ubicacionSeleccionada === ubicacion.id ? 'Desubscribirte' : 'Subscribirte'}
-              </button>
-            </div>
-          ))}
+      {ubicacion &&
+        ubicacion.map((ubicacionItem) => (
+          <div key={ubicacionItem.id} className='ubicacion-fire'>
+            <h2>{ubicacionItem.nombre}</h2>
+            <button className = {ubicacionSeleccionada === ubicacionItem.id ? 'desubscribirte' : 'susbscribirte'} onClick={() => handleSubscribe(ubicacionItem.id)}>
+              {ubicacionSeleccionada === ubicacionItem.id ? 'Desubscribirte' : 'Subscribirte'}
+            </button>
+          </div>
+        ))}
         <GoBack />
       </div>
-      {ubicacionSeleccionada && <Notificaciones ubicacionId={ubicacionSeleccionada} />}
+      {ubicacionSeleccionada && <Notificaciones/>}
     </div>
   );
 };

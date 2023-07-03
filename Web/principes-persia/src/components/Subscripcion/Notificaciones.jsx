@@ -1,26 +1,9 @@
-import { useEffect, useState } from 'react';
-import { doc, onSnapshot} from 'firebase/firestore';
-import { db } from "../../utils/FirebaseJson/configFirebase";
+import { useContext } from 'react';
+import { UbicacionContext } from '../../context/UbicacionContext';
 import "./Notificaciones.css"
 
-const Notificaciones = ({ ubicacionId }) => {
-  const [mensaje, setMensaje] = useState('');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const docRef = doc(db, "ubicacion", ubicacionId);
-      const unsubscribe = onSnapshot(docRef, (snapshot) => {
-        setMensaje(snapshot.data());
-      });
-      // Cuando se desmonte el componente, se cancela la suscripción
-      return () => {
-        unsubscribe();
-      };
-    };
-  
-    fetchData();
-  }, [ubicacionId]);
-
+const Notificaciones = () => {
+  const { mensaje } = useContext(UbicacionContext);
   return (
     <div className="notificaciones-container">
       <h1 className="notificaciones-title">Notificaciones : </h1>

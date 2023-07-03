@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { obtenerUbicaciones } from "../services/Api";
+import { obtenerUbicaciones } from "../../services/Api";
 import Ubicacion from "../components/Ubicacion";
 import "./ListaDeUbicaciones.css";
 
