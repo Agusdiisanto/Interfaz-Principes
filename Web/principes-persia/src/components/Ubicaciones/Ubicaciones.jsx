@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { obtenerUbicaciones } from '../services/Api';
-import Ubicacion from '../components/Ubicacion';
+import { obtenerUbicaciones } from '../../services/Api';
+import Ubicacion from './Ubicacion';
 import "./Ubicacion.css"
-import GoBack from '../utils/GoBack';
-import Loader from '../utils/Loader/Loader';
+import GoBack from '../../utils/GoBack';
+import Loader from '../../utils/Loader/Loader';
+
 
 const Ubicaciones = () => {
   const [ubicaciones, setUbicaciones] = useState(null); 

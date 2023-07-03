@@ -1,3 +1,6 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
     apiKey: "AIzaSyASNFrE8gIrxxH-R426bXQ9FcA_52pgUAQ",
     authDomain: "epersia-532d2.firebaseapp.com",
@@ -9,4 +12,6 @@ const firebaseConfig = {
     measurementId: "G-RR2LT18Q7M"
 };
   
-export default firebaseConfig;
+const app = initializeApp(firebaseConfig);
+
+export const db = getFirestore(app);

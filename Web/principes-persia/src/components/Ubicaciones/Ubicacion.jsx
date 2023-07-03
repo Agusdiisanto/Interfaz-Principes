@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
-const Ubicacion = ({ ubicacion }) => {
+const Ubicacion = ({ ubicacion}) => {
   const opciones = ["Rojo", "Verde", "Amarillo"] 
   const [clase, setClase] = useState("");
 
@@ -18,7 +18,6 @@ const Ubicacion = ({ ubicacion }) => {
       <div className='separador'>
         <h4>{ubicacion.nombreDeLaUbicacion}</h4>
       </div>
-      <h6>Alerta : {ubicacion.alerta}</h6>
       <h6>Latitud: {ubicacion.latitud}</h6>
       <h6>Longitud: {ubicacion.longitud}</h6>
     </div>
