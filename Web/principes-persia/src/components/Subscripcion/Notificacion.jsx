@@ -7,12 +7,13 @@ import {useContext} from 'react';
 
 const Notificacion = ({setShowModal}) => {
 
-  const {mensaje} = useContext(UbicacionContext);
-
+  const {conteo} = useContext(UbicacionContext);
+  
+  
   return (
     <div className="bell-icon" onClick={() => setShowModal(true)}>
         <FontAwesomeIcon icon={faBell} color="black" />
-        {mensaje.cantidadVectores > 0 && <span className="contador">+{mensaje.cantidadVectores}</span>}
+        {conteo > 0 && <span className="contador">+{conteo}</span>}
     </div>
   )
 }

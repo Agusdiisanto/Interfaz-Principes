@@ -4,6 +4,7 @@ import "./Estado.css"
 
 const Estado = () => {
   const { mensaje } = useContext(UbicacionContext);
+  
   return (
     <div className="notificaciones-container">
       <h1 className="notificaciones-title">Estado : </h1>
