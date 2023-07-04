@@ -4,11 +4,11 @@ import './Subscribe.css';
 import GoBack from '../../utils/GoBack';
 import { obtenerUbicaciones } from '../../utils/FirebaseJson/fireUbicaciones';
 import { UbicacionContext } from '../../context/UbicacionContext';
-import Notificaciones from './Notificaciones';
+import Estado from './Estado';
 
 const Subscribe = () => {
   const [ubicacion, setUbicacion] = useState('');
-  const { ubicacionSeleccionada, setUbicacionSeleccionada } = useContext(UbicacionContext);
+  const { ubicacionSeleccionada, setUbicacionSeleccionada} = useContext(UbicacionContext);
 
   useEffect(() => {
     obtenerUbicaciones()
@@ -33,8 +33,8 @@ const Subscribe = () => {
   return (
     <div className='subscribe-container'>
       <h1 className='subscribe-title'>¡Suscríbete y recibe notificaciones!</h1>
-      <div className='subscribe-list-container'>
-        <div className='subscribe-list'>
+      <div className='subscribe-list-container '>
+        <div className='subscribe-list '>
           {ubicacion &&
             ubicacion.map((ubicacionItem) => (
               <div key={ubicacionItem.id} className={`subscribe-item ${ubicacionSeleccionada === ubicacionItem.id ? 'selected' : ''}`}>
@@ -57,7 +57,7 @@ const Subscribe = () => {
             ))}
         </div>
       </div>
-      {ubicacionSeleccionada && <Notificaciones />}
+      {ubicacionSeleccionada && <Estado/>}
       <GoBack />
     </div>
   );

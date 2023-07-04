@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { UbicacionContext } from '../../context/UbicacionContext';
-import "./Notificaciones.css"
+import "./Estado.css"
 
-const Notificaciones = () => {
+const Estado = () => {
   const { mensaje } = useContext(UbicacionContext);
   return (
     <div className="notificaciones-container">
@@ -14,4 +14,4 @@ const Notificaciones = () => {
   );
 };
 
-export default Notificaciones;
+export default Estado;
