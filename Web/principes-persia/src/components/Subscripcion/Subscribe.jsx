@@ -19,6 +19,8 @@ const Subscribe = () => {
         console.log("Error al obtener ubicaciones:", error);
       });
   }, []);
+  // Probar poniendo en la dependencia ubicacion
+
 
   const handleSubscribe = (id) => {
     setUbicacionSeleccionada((prevSeleccionada) => {
