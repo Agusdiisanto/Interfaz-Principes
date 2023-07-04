@@ -1,10 +1,10 @@
-import { useState, useEffect, useContext } from 'react';
-import "./Subscribe.css";
+import { useState, useEffect, useContext} from 'react';
+import { Link } from 'react-scroll';
+import './Subscribe.css';
 import GoBack from '../../utils/GoBack';
-import { obtenerUbicaciones } from "../../utils/FirebaseJson/fireUbicaciones"
+import { obtenerUbicaciones } from '../../utils/FirebaseJson/fireUbicaciones';
 import { UbicacionContext } from '../../context/UbicacionContext';
 import Notificaciones from './Notificaciones';
-
 
 const Subscribe = () => {
   const [ubicacion, setUbicacion] = useState('');
@@ -16,40 +16,49 @@ const Subscribe = () => {
         setUbicacion(dataList);
       })
       .catch((error) => {
-        console.log("Error al obtener ubicaciones:", error);
+        console.log('Error al obtener ubicaciones:', error);
       });
   }, []);
-  // Probar poniendo en la dependencia ubicacion
 
 
   const handleSubscribe = (id) => {
     setUbicacionSeleccionada((prevSeleccionada) => {
-      // Si la ubicación ya está seleccionada, se desubcribe
       if (prevSeleccionada === id) {
         return null;
       }
-      // Si la ubicación no está seleccionada, se Subscribe
       return id;
     });
-  }
+  };
 
   return (
-    <div className='ubicaciones-container'>
-      <h1 className='title'>Subscribite a una Ubicacion</h1>
-      <h3 className='ubicacion-nombre'>Al subscribirte a una ubicacion recibiras notificaciones</h3>
-      <div className='ubicaciones-list'>
-      {ubicacion &&
-        ubicacion.map((ubicacionItem) => (
-          <div key={ubicacionItem.id} className='ubicacion-fire'>
-            <h2>{ubicacionItem.nombre}</h2>
-            <button className = {ubicacionSeleccionada === ubicacionItem.id ? 'desubscribirte' : 'susbscribirte'} onClick={() => handleSubscribe(ubicacionItem.id)}>
-              {ubicacionSeleccionada === ubicacionItem.id ? 'Desubscribirte' : 'Subscribirte'}
-            </button>
-          </div>
-        ))}
-        <GoBack />
+    <div className='subscribe-container'>
+      <h1 className='subscribe-title'>¡Suscríbete y recibe notificaciones!</h1>
+      <div className='subscribe-list-container'>
+        <div className='subscribe-list'>
+          {ubicacion &&
+            ubicacion.map((ubicacionItem) => (
+              <div key={ubicacionItem.id} className={`subscribe-item ${ubicacionSeleccionada === ubicacionItem.id ? 'selected' : ''}`}>
+                <Link
+                  to={ubicacionItem.id.toString()}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className='subscribe-link'
+                >
+                  <h2>{ubicacionItem.nombre}</h2>
+                </Link>
+                <button
+                  className={`subscribe-button ${ubicacionSeleccionada === ubicacionItem.id ? 'unsubscribe' : 'subscribe'}`}
+                  onClick={() => handleSubscribe(ubicacionItem.id)}
+                >
+                  {ubicacionSeleccionada === ubicacionItem.id ? 'Desuscribir' : 'Suscribir'}
+                </button>
+              </div>
+            ))}
+        </div>
       </div>
-      {ubicacionSeleccionada && <Notificaciones/>}
+      {ubicacionSeleccionada && <Notificaciones />}
+      <GoBack />
     </div>
   );
 };

@@ -2,8 +2,9 @@
   background-color: #4e4e4e;
   border: rgb(84, 84, 84) 2px solid; 
   border-radius: 10px;
-  width: 95%;
-  margin-top: 4rem;
+  width: 90%;
+  margin: 5rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .notificaciones-title {
@@ -28,17 +29,3 @@
   padding: 5px; 
 }
 
-.Verde{
-  color: green;
-  background-color: transparent !important;
-}
-
-.Rojo{
-  color: red;
-  background-color: transparent !important;
-}
-
-.Amarillo{
-  color: yellow !important;
-  background-color: transparent !important;
-}

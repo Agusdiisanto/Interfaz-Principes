@@ -8,7 +8,7 @@ const Notificaciones = () => {
     <div className="notificaciones-container">
       <h1 className="notificaciones-title">Estado : </h1>
       <div className='notificacion-ubicacion'>
-      <h2>{mensaje.nombre}, esta en alerta <span className={mensaje.alerta}>{mensaje.alerta}</span> con {mensaje.cantidadVectores} vectores </h2>        
+      <h2>{mensaje.nombre}, esta en alerta {mensaje.alerta} con {mensaje.cantidadVectores} vectores </h2>        
       </div>
     </div>
   );

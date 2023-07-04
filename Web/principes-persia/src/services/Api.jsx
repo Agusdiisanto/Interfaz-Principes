@@ -11,9 +11,9 @@ const crearUbicacion = async (ubicacionDTO) => {
   }
 };
 
-const recuperarUbicacion = async (ubicacionId) => {
+const recuperarUbicacion = async (ubicacionNombre) => {
   try {
-    const response = await axios.get(`${BASE_URL}/${ubicacionId}`);
+    const response = await axios.get(`${BASE_URL}/${ubicacionNombre}`);
     return response.data;
   } catch (error) {
     throw new Error(error.response.data);
@@ -29,9 +29,9 @@ const obtenerUbicaciones = async () => {
   }
 };
 
-const moverVector = async (vectorId, ubicacionId) => {
+const moverVector = async (vectorId, ubicacionNombre) => {
   try {
-    const response = await axios.put(`${BASE_URL}/mover/${vectorId}/${ubicacionId}`);
+    const response = await axios.put(`${BASE_URL}/mover/${vectorId}/${ubicacionNombre}`);
     return response.data;
   } catch (error) {
     throw new Error(error.response.data);
@@ -65,9 +65,9 @@ const obtenerConectados = async (ubicacionOrigen) => {
   }
 };
 
-const expandirUbicacion = async (ubicacionId) => {
+const expandirUbicacion = async (ubicacionNombre) => {
   try {
-    const response = await axios.put(`${BASE_URL}/expandir/${ubicacionId}`);
+    const response = await axios.put(`${BASE_URL}/expandir/${ubicacionNombre}`);
     return response.data;
   } catch (error) {
     throw new Error(error.response.data);

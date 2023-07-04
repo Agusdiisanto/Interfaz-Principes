@@ -1,4 +1,4 @@
-import { faPlus, faSearch, faCodeBranch , faWalking , faLink, faBell,faEarthAmericas,faRunning } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faSearch, faCodeBranch , faWalking , faLink, faBell,faEarthAmericas,faRunning, faVirus } from '@fortawesome/free-solid-svg-icons';
 
 export const Options = [
   {
@@ -49,6 +49,13 @@ export const Options = [
     icon: faLink,
     className: 'option-connect',
     path: 'conectar',
+  },
+  {
+    label: 'Expandir',
+    description: 'Dado una ubicacion expande e infecta.',
+    icon: faVirus,
+    className: 'option-expandir',
+    path: 'expandir',
   },
   {
     label: 'Suscribirte',
