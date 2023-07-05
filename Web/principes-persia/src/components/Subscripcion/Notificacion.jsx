@@ -9,7 +9,6 @@ const Notificacion = ({setShowModal}) => {
 
   const {conteo} = useContext(UbicacionContext);
   
-  
   return (
     <div className="bell-icon" onClick={() => setShowModal(true)}>
         <FontAwesomeIcon icon={faBell} color="black" />
