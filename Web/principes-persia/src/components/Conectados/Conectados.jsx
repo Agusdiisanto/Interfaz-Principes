@@ -5,13 +5,15 @@ import "../Ubicaciones/Ubicacion.css"
 import GoBack from '../../utils/GoBack';
 import Loader from '../../utils/Loader/Loader';
 import Searcher from './Searcher';
-
+import Modal from '../../utils/Modal/Modal';
+import Notificacion from '../Subscripcion/Notificacion';
 
 const Conectados = () => {
   const [ubicaciones, setUbicaciones] = useState(null); 
   const [searchQuery, setSearchQuery] = useState(null);
   const [isLoading, setIsLoading] = useState(true); 
   const [alerta, setAlerta] = useState(null);
+  const [showModal, setShowModal] = useState(false)
   const NO_CONECTADOS_MESSAGE = 'No hay conectados con esa ubicación';
 
 
@@ -33,23 +35,31 @@ const Conectados = () => {
 
 
   const checkAlerta = (ubicaciones) => {
-    const alertaRoja = ubicaciones.some((ubicacion) => ubicacion.alerta === 'rojo');
-    const alertaAmarilla = ubicaciones.some((ubicacion) => ubicacion.alerta === 'amarillo');
+    const alertaRoja = ubicaciones.some((ubicacion) => ubicacion.alerta === 'Rojo');
+    const alertaAmarilla = ubicaciones.some((ubicacion) => ubicacion.alerta === 'Amarillo');
 
     if (alertaRoja) {
-      setAlerta('¡Alerta Roja! Peligro');
+      setAlerta('Rojo');
     } else if (alertaAmarilla) {
-      setAlerta('¡Alerta Amarilla! Cautela');
+      setAlerta('Amarillo');
     } else {
       setAlerta(null);
     }
   };
 
+  console.log(alerta)
+
   return (
     <div className="ubicaciones-container">
+      {showModal ? (<Modal onCloseModal = {() => setShowModal(false)} notificacion={alerta}/>) : null }
       {isLoading && (
         <Loader />
         )} 
+
+      {alerta ? (
+        <Notificacion setShowModal = {setShowModal}/>
+        ) : null}
+
           <h1 className="animate__animated animate__pulse title-container">Conectados:</h1>
           <Searcher setQuery={setSearchQuery} />
           {ubicaciones && ubicaciones.length > 0 ? (

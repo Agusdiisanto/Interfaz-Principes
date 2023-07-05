@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
-const Modal = ({onCloseModal}) => {
+const Modal = ({onCloseModal, notificacion = ""}) => {
   const { mensaje } = useContext(UbicacionContext);
 
   let titulo = "";
@@ -17,20 +17,26 @@ const Modal = ({onCloseModal}) => {
     titulo = "Ten cuidado, hay bastantes vectores en tu ciudad";
   } else if (mensaje.alerta === "Rojo") {
     titulo = "PELIGRO: No salgas de tu casa, te puedes contagiar";
-  } else {
-  // Valor por defecto en caso de que mensaje.alerta no coincida con ninguna opción
-    titulo = "Estado de alerta desconocido";
+  } 
+
+  if(notificacion === "Rojo"){
+    titulo = "Ten cuidado, en una ciudad cercana hay muchos vectores"
+  }else if (notificacion === "Amarillo") {
+    titulo = "Ten cuidado, hay bastantes vectores en la ciudad cercana";
   }
+
 
   return (
     <div className='modal-overlay '>
       <div className={`modal-container`}></div>  
-      <div className={`modal ${mensaje.alerta}`}>
+      <div className={`modal ${mensaje ? mensaje.alerta : ""} ${notificacion === "Rojo" ? "Rojo" : "Amarillo" }`}>
       <div className='text-container'>
         <span className="close-icon" onClick={onCloseModal}>
                   <FontAwesomeIcon icon={faTimes} />
         </span>
-          <h1>{titulo}</h1>
+          <h1>
+            {titulo}
+          </h1>
       </div>
    
       </div>
@@ -40,6 +46,7 @@ const Modal = ({onCloseModal}) => {
 
 Modal.propTypes = {
   onCloseModal: PropTypes.func.isRequired,
+  notificacion: PropTypes.string.isRequired
 };
 
 export default Modal
