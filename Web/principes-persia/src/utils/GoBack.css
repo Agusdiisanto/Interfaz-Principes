@@ -1,0 +1,9 @@
+.goBackButton {
+  background-color: #145ea8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
