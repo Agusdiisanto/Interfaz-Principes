@@ -10,6 +10,7 @@ const BuscarUbicacion = () => {
   const [ubicacion, setUbicacion] = useState(null); 
   const [searchQuery, setSearchQuery] = useState(null);
   const [isLoading, setIsLoading] = useState(false); 
+  const [error, setError] = useState("")
 
   const getUbicacion = () => {
     if (searchQuery !== null) {
@@ -17,9 +18,11 @@ const BuscarUbicacion = () => {
         .then((response) => {
           setUbicacion(response);
           setIsLoading(false); 
+          setError("")
         })
         .catch((error) => {
-          console.error('Error al obtener las ubicaciones:', error);
+          setUbicacion(null)
+          setError('No se ha encontrado esa ubicacion', error);
         });
     }
   };
@@ -37,10 +40,9 @@ const BuscarUbicacion = () => {
       {isLoading && (
         <Loader />
         )} 
-        <h1 className="animate__animated animate__pulse title-container">Buscar Ubicacion:</h1>
         <Searcher setQuery={setSearchQuery} />
         {ubicacion !== null && <Ubicacion ubicacion={ubicacion}/>}
-
+        {error && <h2 className='error-mensaje'>{error}</h2>}
         <GoBack />
         
     </div>
