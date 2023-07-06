@@ -24,8 +24,9 @@ const Form = () => {
     <div className="main-container">
       <div className="bg-container">
         <img
-        src="https://images.pexels.com/photos/3859774/pexels-photo-3859774.jpeg?cs=srgb&dl=pexels-josh-hild-3859774.jpg&fm=jpg"
-        alt="city"
+          className="form-img"
+          src="https://images.pexels.com/photos/3859774/pexels-photo-3859774.jpeg?cs=srgb&dl=pexels-josh-hild-3859774.jpg&fm=jpg"
+          alt="city"
         />
         <div className="form-container">
           <div className="form">

@@ -24,8 +24,9 @@ const Mover = () => {
     <div className="main-container">
       <div className="bg-container">
         <img
-        src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/KMLUD4LV6JEE3LQWOPCTRPT7ZA.jpg"
-        alt="vectores en movimiento"
+          className="mover-img"
+          src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/KMLUD4LV6JEE3LQWOPCTRPT7ZA.jpg"
+          alt="vectores en movimiento"
         />
         <div className="form-container">
           <div className="form">
