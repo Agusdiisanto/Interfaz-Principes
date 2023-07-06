@@ -18,6 +18,7 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
 
 .separador{
@@ -37,7 +38,7 @@
 }
 
 .Amarillo{
-  background-color:rgb(209, 202, 0) !important;
+  background-color:rgb(192, 185, 0) !important;
 }
 
 .ubicacion-card h4 {

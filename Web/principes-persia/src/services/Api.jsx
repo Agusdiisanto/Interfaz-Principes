@@ -16,6 +16,7 @@ const recuperarUbicacion = async (ubicacionNombre) => {
     const response = await axios.get(`${BASE_URL}/${ubicacionNombre}`);
     return response.data;
   } catch (error) {
+    console.log(error.response.data);
     throw new Error(error.response.data);
   }
 };

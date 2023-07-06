@@ -12,7 +12,7 @@
 }
 
 .modal {
-    width: 800px;
+    width: auto;
     color: white;
     background: black;
     z-index: 9999;
@@ -35,7 +35,9 @@
 .text-container h1 {
     font-size: 1.6rem;
     margin-left: 1rem;
-}
+    max-width: 90%; /* Establece un límite de ancho */
+    padding: 0 1rem; /* Agrega espacio alrededor del texto */
+  }
 
 .modal-container {
     padding: 2rem;
@@ -49,8 +51,8 @@
     align-items: center;
     cursor: pointer;    
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
+    height: 3rem;
+    width: 3rem;
 }
   
 .close-icon:hover {

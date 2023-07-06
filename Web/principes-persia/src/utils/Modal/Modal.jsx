@@ -20,9 +20,9 @@ const Modal = ({onCloseModal, notificacion = ""}) => {
   } 
 
   if(notificacion === "Rojo"){
-    titulo = "Ten cuidado, en una ciudad cercana hay muchos vectores"
+    titulo = "Ten mucho cuidado, en una ciudad cercana hay muchos vectores y estan el alerta roja"
   }else if (notificacion === "Amarillo") {
-    titulo = "Ten cuidado, hay bastantes vectores en la ciudad cercana";
+    titulo = "Ten cautela, hay bastantes vectores en la ciudad cercana pero estan en alerta amarilla";
   }
 
 
