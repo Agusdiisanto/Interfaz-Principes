@@ -17,17 +17,10 @@ export const Options = [
   },
   {
     label: 'Mover vector',
-    description: 'Mueve un vector específico a otra ubicación de grado 1.',
-    icon: faWalking,
+    description: 'Desplaza el vector hacia la ubicacion deseada.',
+    icon: faVirus,
     className: 'option-move',
     path: 'mover',
-  },
-  {
-    label: 'Mover más corto vector',
-    description: 'Mueve el vector más corto a otra ubicación.',
-    icon: faRunning, 
-    className: 'option-shortMove',
-    path: 'moverMasCorto',
   },
   {
     label: 'Conectados',

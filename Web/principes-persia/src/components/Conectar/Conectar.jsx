@@ -1,6 +1,6 @@
 import { conectarUbicaciones } from "../../services/Api";
 import { useState } from "react";
-import Form from "../../utils/Form/Form";
+
 
 const Conectar = () => {
   const [error, setErrorMessage] = useState("");
@@ -14,12 +14,7 @@ const Conectar = () => {
   };
 
   return ( // SUPONGO QUE SE PUEDE SACAR ESTE FORM Y USAR OTRO O BIEN HACERLE UN REFACTOR.
-    <Form
-      title="Conectar ubicaciones"
-      img="https://thumbs.dreamstime.com/b/un-animal-abstracto-que-encarna-el-concepto-de-velocidad-y-agilidad-ai-generativo-273299364.jpg"
-      onSubmit={onSubmit}
-      error={error}
-    />
+    <h1>Conectados</h1>
   );
 };
 
