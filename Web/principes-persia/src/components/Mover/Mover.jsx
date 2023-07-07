@@ -64,7 +64,7 @@ const Mover = () => {
   return (
     <div className="main-container">
       <div className="bg-container">
-      {showModal ? (<Modal onCloseModal = {() => setShowModal(false)}/>) : null }
+      {showModal ? (<Modal onCloseModal = {() => setShowModal(false)} llegoUnVector = {true} />) : null }
       {mensaje && mensaje.nombre === nombreUbicacion ? (
         <Notificacion openModal = {handleOpenModal}/>
       ) : null}

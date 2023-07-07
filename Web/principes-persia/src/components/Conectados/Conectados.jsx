@@ -10,7 +10,7 @@ import Notificacion from '../Subscripcion/Notificacion';
 import { UbicacionContext } from '../../context/UbicacionContext';
 
 const Conectados = () => {
-  const { mensaje } = useContext(UbicacionContext);
+  const { mensaje,setConteo} = useContext(UbicacionContext);
   const [ubicaciones, setUbicaciones] = useState(null); 
   const [searchQuery, setSearchQuery] = useState(null);
   const [isLoading, setIsLoading] = useState(true); 
@@ -32,7 +32,7 @@ const Conectados = () => {
 
   useEffect(() => {
     getConectados();
-  }, [searchQuery]);
+  }, [ubicaciones,searchQuery]);
 
 
   const checkAlerta = (ubicaciones) => {
@@ -48,9 +48,10 @@ const Conectados = () => {
     }
   };
 
-  // SOLO NOTIFICAR CUANDO LA UBICACION QUE ESTOY BUSCANDO ES LA QUE ESTOY SUBSCRIPTO
-
-
+  const handleOpenModal = () => {
+    setShowModal(true);
+    setConteo(0)
+  }
 
   return (
     <div className="ubicaciones-container">
@@ -60,7 +61,7 @@ const Conectados = () => {
         )} 
 
       {alerta && mensaje.nombre === searchQuery ? (
-        <Notificacion setShowModal = {setShowModal}/>
+        <Notificacion openModal = {handleOpenModal}/>
         ) : null}
 
           <h1 className="animate__animated animate__pulse title-container">Conectados:</h1>
