@@ -7,6 +7,7 @@ import Ubicaciones from "./components/Ubicaciones/Ubicaciones"
 import Subscribe from "./components/Subscripcion/Subscribe"
 import { UbicacionProvider } from "./context/UbicacionContext"
 import Conectados from "./components/Conectados/Conectados"
+import Conectar from "./components/Conectar/Conectar"
 import BuscarUbicacion from "./components/BuscarUbicacion/BuscarUbicacion"
 import Mapa from "./components/Mapa"
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/moverMasCorto" element={<MoverMasCorto/>}/>
         <Route path="/subscribir" element={<Subscribe/>}/>
         <Route path="/conectados" element={<Conectados/>}/>
+        <Route path="/conectar" element={<Conectar/>}/>
         <Route path="/buscar" element={<BuscarUbicacion/>}/> 
         <Route path="/mapa" element={<Mapa/>}/>
       </Routes>
