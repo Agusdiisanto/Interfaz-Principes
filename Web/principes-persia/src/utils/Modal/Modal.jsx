@@ -29,8 +29,8 @@ const Modal = ({onCloseModal, notificacion = ""}) => {
   return (
     <div className='modal-overlay '>
       <div className={`modal-container`}></div>  
-      <div className={`modal ${mensaje ? mensaje.alerta : ""} ${notificacion === "Rojo" ? "Rojo" : "Amarillo" }`}>
-      <div className='text-container'>
+      <div className={`modal ${mensaje ? mensaje.alerta : ""} ${notificacion === "Rojo" ? "Rojo" : notificacion === "Amarillo" ? "Amarillo" : "" }`}>
+      <div className='text-container'> 
         <span className="close-icon" onClick={onCloseModal}>
                   <FontAwesomeIcon icon={faTimes} />
         </span>

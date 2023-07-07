@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext} from 'react';
 import { obtenerConectados } from '../../services/Api';
 import Ubicacion from '../Ubicaciones/Ubicacion';
 import "../Ubicaciones/Ubicacion.css"
@@ -7,15 +7,16 @@ import Loader from '../../utils/Loader/Loader';
 import Searcher from './Searcher';
 import Modal from '../../utils/Modal/Modal';
 import Notificacion from '../Subscripcion/Notificacion';
+import { UbicacionContext } from '../../context/UbicacionContext';
 
 const Conectados = () => {
+  const { mensaje } = useContext(UbicacionContext);
   const [ubicaciones, setUbicaciones] = useState(null); 
   const [searchQuery, setSearchQuery] = useState(null);
   const [isLoading, setIsLoading] = useState(true); 
   const [alerta, setAlerta] = useState(null);
   const [showModal, setShowModal] = useState(false)
   const NO_CONECTADOS_MESSAGE = 'No hay conectados con esa ubicación';
-
 
   const getConectados = () => {
     obtenerConectados(searchQuery)
@@ -47,7 +48,9 @@ const Conectados = () => {
     }
   };
 
-  console.log(alerta)
+  // SOLO NOTIFICAR CUANDO LA UBICACION QUE ESTOY BUSCANDO ES LA QUE ESTOY SUBSCRIPTO
+
+
 
   return (
     <div className="ubicaciones-container">
@@ -56,7 +59,7 @@ const Conectados = () => {
         <Loader />
         )} 
 
-      {alerta ? (
+      {alerta && mensaje.nombre === searchQuery ? (
         <Notificacion setShowModal = {setShowModal}/>
         ) : null}
 

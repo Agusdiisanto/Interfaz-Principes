@@ -9,6 +9,7 @@ import Subscribe from "./components/Subscripcion/Subscribe"
 import { UbicacionProvider } from "./context/UbicacionContext"
 import Conectados from "./components/Conectados/Conectados"
 import BuscarUbicacion from "./components/BuscarUbicacion/BuscarUbicacion"
+import Mapa from "./components/Mapa"
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Route path="/moverMasCorto" element={<MoverMasCorto/>}/>
         <Route path="/subscribir" element={<Subscribe/>}/>
         <Route path="/conectados" element={<Conectados/>}/>
-        <Route path="/buscar" element={<BuscarUbicacion/>}></Route>
+        <Route path="/buscar" element={<BuscarUbicacion/>}/> 
+        <Route path="/mapa" element={<Mapa/>}/>
       </Routes>
     </BrowserRouter>
   </UbicacionProvider>

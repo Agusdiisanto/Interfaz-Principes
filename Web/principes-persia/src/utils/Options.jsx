@@ -2,13 +2,6 @@ import { faPlus, faSearch, faCodeBranch , faWalking , faLink, faBell,faEarthAmer
 
 export const Options = [
   {
-    label: 'Crear Ubicación',
-    description: 'Crea una nueva ubicación en el sistema.',
-    icon: faPlus,
-    className: 'option-crear',
-    path: 'crear',
-  },
-  {
     label: 'Buscar Ubicación',
     description: 'Busca una ubicación existente en el sistema.',
     icon: faSearch,
@@ -63,5 +56,12 @@ export const Options = [
     icon: faBell,
     className: 'option-subscribe',
     path: 'subscribir',
+  },
+  {
+    label: 'Mapa',
+    description: 'Muestra todas las ubicaciones en un mapa',
+    icon: faPlus,
+    className: 'option-crear',
+    path: 'crear',
   },
 ];

@@ -48,9 +48,9 @@ const Mover = () => {
                 <label htmlFor="nombre" className="form-label">Nombre del destino</label>
                 <input
                   type="text"
-                  id="nombre"
-                  {...register("nombre", { required: true })}
-                  className={`form-input ${errors.nombre ? "error" : ""}`}
+                  id="ubicacionNombre"
+                  {...register("ubicacionNombre", { required: true })}
+                  className={`form-input ${errors.ubicacionNombre ? "error" : ""}`}
                 />
                 {errors.nombre && (
                   <p className="error-message">Este campo es requerido</p>

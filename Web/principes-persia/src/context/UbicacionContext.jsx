@@ -35,7 +35,7 @@ export const UbicacionProvider = ({ children }) => {
   }, [ubicacionSeleccionada, mensaje && mensaje.cantidadVectores]);
 
   return (
-    <UbicacionContext.Provider value={{ ubicacionSeleccionada, setUbicacionSeleccionada, mensaje, conteo}}>
+    <UbicacionContext.Provider value={{ ubicacionSeleccionada, setUbicacionSeleccionada, mensaje, conteo, setConteo}}>
       {children}
     </UbicacionContext.Provider>
   );
