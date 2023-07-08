@@ -1,4 +1,4 @@
-import { faPlus, faSearch, faCodeBranch , faWalking , faLink, faBell,faEarthAmericas,faRunning, faVirus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faSearch, faCodeBranch, faLink, faBell,faEarthAmericas, faVirus } from '@fortawesome/free-solid-svg-icons';
 
 export const Options = [
   {
@@ -55,6 +55,6 @@ export const Options = [
     description: 'Muestra todas las ubicaciones en un mapa',
     icon: faPlus,
     className: 'option-crear',
-    path: 'crear',
+    path: 'mapa',
   },
 ];

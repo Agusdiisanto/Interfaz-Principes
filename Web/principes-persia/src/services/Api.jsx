@@ -75,10 +75,20 @@ const expandirUbicacion = async (ubicacionNombre) => {
   }
 };
 
+const obtenerDistritos = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/distrito/distritos`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response.data);
+  }
+};
+
 export {
   crearUbicacion,
   recuperarUbicacion,
   obtenerUbicaciones,
+  obtenerDistritos,
   moverVector,
   moverMasCorto,
   conectarUbicaciones,
