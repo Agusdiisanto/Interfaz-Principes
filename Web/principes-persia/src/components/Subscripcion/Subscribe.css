@@ -1,127 +1,191 @@
 .subscribe-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: #201a21;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #c9c9c9 #332f34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #201a21;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #c9c9c9 #332f34;
+}
+
+.subscribe-title {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subscribe-scroll-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-height: 400px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #c9c9c9 #332f34;
+}
+
+.subscribe-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.subscribe-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #a3a3a3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: normal;
+}
+
+.subscribe-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(213, 213, 213, 0.2);
+}
+
+.subscribe-item.selected {
+  background-color: #ededed;
+  padding: 1.8rem;
+  margin-bottom: 0.8rem;
+  border: 2px solid #783fb5;
+}
+
+.subscribe-link {
+  color: #783fb5;
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.subscribe-button {
+  border-radius: 32px;
+  height: 35px;
+  width: 120px;
+  background-color: rgb(65, 176, 0);
+  color: white;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.subscribe-button.unsubscribe {
+  width: 110px;
+  background-color: rgb(162, 0, 0);
+}
+
+.subscribe-button:hover {
+  background-color: rgb(26, 121, 0);
+  transform: scale(1.1);
+}
+
+.subscribe-button.unsubscribe:hover {
+  background-color: rgb(123, 0, 0);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.carousel .carousel-slider .control-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.carousel .carousel-slider .control-dots .dot {
+  background-color: transparent;
+  border: 2px solid #c9c9c9;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel .carousel-slider .control-dots .dot.selected {
+  background-color: #783fb5;
+  border-color: #783fb5;
+}
+
+.carousel .carousel-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.carousel .carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel .carousel-arrow-prev {
+  left: 8%;
+}
+
+.carousel .carousel-arrow-next {
+  right: 8%;
+}
+
+.subscribe-item {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.subscribe-item.selected {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Ajuste de la posición de las flechas en dispositivos móviles */
+@media (max-width: 768px) {
+  .carousel .carousel-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
   }
-  
-  .subscribe-title {
-    font-size: 36px;
-    color: white;
-    margin-bottom: 1rem;
-    text-align: center;
+
+  .carousel .carousel-arrow-prev {
+    left: 5px;
   }
-  
-  .subscribe-scroll-container {
-    max-height: 400px;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #c9c9c9 #332f34;
+
+  .carousel .carousel-arrow-next {
+    right: 5px;
   }
-  
-  .subscribe-list {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    width: fit-content;
-    padding-bottom: 1rem;
-    /* Añade los siguientes estilos para hacer visible la barra de desplazamiento */
-    overflow-y: hidden;
-    white-space: nowrap;
-  }
-  
-  .subscribe-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 200px;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-    background-color: #a3a3a3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    flex-shrink: 0;
-    white-space: normal;
-  }
-  
-  .subscribe-item:hover {
-    transform: scale(1.07);
-    box-shadow: 0 4px 8px rgba(213, 213, 213, 0.2);
-  }
-  
-  .subscribe-item.selected {
-    background-color: #ededed;
-    padding: 1.8rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .subscribe-link {
-    color: #783fb5;
-    text-decoration: none;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .subscribe-button {
-    border-radius: 32px;
-    height: 35px;
-    width: 120px;
-    background-color: rgb(65, 176, 0);
-    color: white;
-    border: none;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  .subscribe-button.unsubscribe {
-    width: 110px;
-    background-color: rgb(162, 0, 0);
-  }
-  
-  .subscribe-button:hover {
-    background-color: rgb(26, 121, 0);
-    transform: scale(1.1);
-  }
-  
-  .subscribe-button.unsubscribe:hover {
-    background-color: rgb(123, 0, 0);
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  button:active {
-    transform: scale(0.95);
-  }
-  
-  .scroll-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: #a3a3a3;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .scroll-button:hover {
-    background-color: #ededed;
-  }
-  
-  .scroll-button .icon {
-    font-size: 20px;
-    color: #332f34;
-  }
-  
+}

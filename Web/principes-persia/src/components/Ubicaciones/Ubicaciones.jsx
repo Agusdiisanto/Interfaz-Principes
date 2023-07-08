@@ -4,7 +4,7 @@ import Ubicacion from './Ubicacion';
 import "./Ubicacion.css"
 import GoBack from '../../utils/GoBack';
 import Loader from '../../utils/Loader/Loader';
-import Carousel from 'react-elastic-carousel';
+
 
 const Ubicaciones = () => {
   const [ubicaciones, setUbicaciones] = useState(null); 
@@ -33,13 +33,10 @@ const Ubicaciones = () => {
         <>
           <h1 className="animate__animated animate__pulse title-container">Ubicaciones:</h1>
           <div className="ubicaciones-list">
-            {ubicaciones && (
-              <Carousel itemsToShow={2}>{
-                ubicaciones.map((ubicacion) => (
-                  <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
-                ))}
-              </Carousel>
-            )}
+          {ubicaciones &&
+              ubicaciones.map((ubicacion) => (
+                <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
+              ))}
           </div>
           <GoBack />
         </>
