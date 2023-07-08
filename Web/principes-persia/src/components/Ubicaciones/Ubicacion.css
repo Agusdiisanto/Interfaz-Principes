@@ -1,62 +1,60 @@
 /* Estilos para el contenedor de ubicaciones */
 .ubicaciones-container {
-    padding: 2rem;
-    margin: 20px;
+  padding: 2rem;
+  margin: 20px;
 }
-  
-  /* Estilos para la lista de ubicaciones */
+
+/* Estilos para la lista de ubicaciones */
 .ubicaciones-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding-bottom: 2rem;
+  background-color: rgb(5, 36, 21)(32, 0, 0);
 }
 
 /* Estilos para cada ubicación */
 .ubicacion-card {
-    color:rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+  width: 300px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* margin-bottom: 1rem; */
 }
 
-.separador{
+.separador {
   margin-bottom: 1rem;
 }
 
-.default{
-  background-color:rgb(66, 66, 66) !important;
+.default {
+  background-color: rgb(66, 66, 66) !important;
 }
 
-.Verde{
-  background-color:rgb(36, 113, 0) !important;
+.Verde {
+  background-color: rgb(36, 113, 0) !important;
 }
 
-.Rojo{
-  background-color:rgb(150, 0, 0) !important;
+.Rojo {
+  background-color: rgb(150, 0, 0) !important;
 }
 
-.Amarillo{
-  background-color:rgb(192, 185, 0) !important;
+.Amarillo {
+  background-color: rgb(192, 185, 0) !important;
 }
 
 .ubicacion-card h4 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .ubicacion-card h6 {
-    margin: 5px 0;
-    font-size: 14px;
-    margin-bottom: 5px;
+  margin: 5px 0;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-.error-mensaje{
+.error-mensaje {
   width: 100%;
   opacity: 0.6;
   text-align: center;
   padding: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
