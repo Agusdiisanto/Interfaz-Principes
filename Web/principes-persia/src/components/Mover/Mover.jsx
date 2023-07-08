@@ -2,22 +2,22 @@ import { useState, useContext } from "react";
 import GoBack from "../../utils/GoBack";
 import { useForm } from "react-hook-form";
 import { moverVector, moverMasCorto } from "../../services/Api";
-import VectorImage from "./vector.webp"
-import "./Mover.css"
-import { UbicacionContext } from '../../context/UbicacionContext';
-import Modal from "../../utils/Modal/Modal"
-import Notificacion from "../../components/Subscripcion/Notificacion"
+import VectorImage from "./vector.webp";
+import "./Mover.css";
+import { UbicacionContext } from "../../context/UbicacionContext";
+import Modal from "../../utils/Modal/Modal";
+import Notificacion from "../../components/Subscripcion/Notificacion";
 
 const Mover = () => {
   const { mensaje, setConteo } = useContext(UbicacionContext);
   const [error, setErrorMessage] = useState("");
-  const [showModal, setShowModal] = useState(false)
-  const [nombreUbicacion,setNombreUbicacion] = useState("") 
+  const [showModal, setShowModal] = useState(false);
+  const [nombreUbicacion, setNombreUbicacion] = useState("");
 
   const handleOpenModal = () => {
     setShowModal(true);
-    setConteo(0)
-  }
+    setConteo(0);
+  };
 
   const {
     register,
@@ -35,7 +35,7 @@ const Mover = () => {
           await moverMasCorto(vectorId, ubicacionNombre);
         } catch (error) {
           setErrorMessage(error.message);
-          reset(); 
+          reset();
           return;
         }
       } else {
@@ -43,18 +43,18 @@ const Mover = () => {
           await moverVector(vectorId, ubicacionNombre);
         } catch (error) {
           setErrorMessage(error.message);
-          reset(); 
+          reset();
           return;
         }
       }
       reset();
-      setErrorMessage(""); 
+      setErrorMessage("");
       const mensajeExito = isMoverMasCorto
         ? "El vector se ha movido por el camino más corto correctamente"
         : "El vector se ha movido correctamente";
       alert(mensajeExito);
     } catch (error) {
-      setErrorMessage(error.message); 
+      setErrorMessage(error.message);
       reset();
     }
   };
@@ -64,10 +64,14 @@ const Mover = () => {
   return (
     <div className="main-container">
       <div className="bg-container">
-      {showModal ? (<Modal onCloseModal = {() => setShowModal(false)} llegoUnVector = {true} />) : null }
-      {mensaje && mensaje.nombre === nombreUbicacion ? (
-        <Notificacion openModal = {handleOpenModal}/>
-      ) : null}
+        {showModal
+          ? <Modal onCloseModal = {() => setShowModal(false)} llegoUnVector = {true} />
+          : null
+        }
+        {mensaje && mensaje.nombre === nombreUbicacion
+          ? <Notificacion openModal = {handleOpenModal}/>
+          : null
+        }
         <img className="mover-img" src={VectorImage} alt="vectores en movimiento" />
         <div className="form-container">
           <div className="form">
@@ -106,25 +110,23 @@ const Mover = () => {
                 />
               </div>
               <div className="form-group">
-              <div className="form-label-container">
-                <label htmlFor="moverMasCorto" className="form-label">
-                  Mover por el camino más corto:
-                </label>
-                <div className="checkbox-container">
-                  <input
-                    type="checkbox"
-                    id="moverMasCorto"
-                    checked={isMoverMasCorto}
-                    onChange={() => setIsMoverMasCorto(!isMoverMasCorto)}
-                  />
-                  <label htmlFor="moverMasCorto" className="checkbox-custom" />
+                <div className="form-label-container">
+                  <label htmlFor="moverMasCorto" className="form-label">
+                    Mover por el camino más corto
+                  </label>
+                  <div className="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="moverMasCorto"
+                      checked={isMoverMasCorto}
+                      onChange={() => setIsMoverMasCorto(!isMoverMasCorto)}
+                    />
+                    <label htmlFor="moverMasCorto" className="checkbox-custom" />
+                  </div>
                 </div>
               </div>
-            </div>
               <div className="summit-container">
-                <button type="submit" className="submit-button">
-                  {isMoverMasCorto ? "Mover Mas Corto" : "Mover vector"}
-                </button>
+                <button type="submit" className="submit-button">Mover vector</button>
               </div>
             </form>
             {error && <p className="error-message">{error}</p>}
