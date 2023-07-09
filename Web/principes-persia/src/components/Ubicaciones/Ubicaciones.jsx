@@ -5,7 +5,6 @@ import "./Ubicacion.css"
 import GoBack from '../../utils/GoBack';
 import Loader from '../../utils/Loader/Loader';
 
-
 const Ubicaciones = () => {
   const [ubicaciones, setUbicaciones] = useState(null); 
   const [isLoading, setIsLoading] = useState(true); 
@@ -26,17 +25,17 @@ const Ubicaciones = () => {
   }, [ubicaciones]);
 
   return (
-    <div className="ubicaciones-container">
-      {isLoading ? (
-        <Loader />
-      ) : (
+    <div className="ubicaciones">
+      {isLoading ? (<Loader />) : (
         <>
-          <h1 className="animate__animated animate__pulse title-container">Ubicaciones:</h1>
-          <div className="ubicaciones-list">
-          {ubicaciones &&
-              ubicaciones.map((ubicacion) => (
-                <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
-              ))}
+          <h1 className="animate__animated animate__pulse title-container">Ubicaciones</h1>
+          <div className="ubicaciones-list-container">
+            <div className="ubicaciones-list">
+              {ubicaciones &&
+                ubicaciones.map((ubicacion) => (
+                  <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
+                ))}
+            </div>
           </div>
           <GoBack />
         </>
