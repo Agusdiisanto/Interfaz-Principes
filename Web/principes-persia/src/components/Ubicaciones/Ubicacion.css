@@ -33,6 +33,9 @@
 
 /* Estilos para cada ubicación */
 .ubicacion-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color:rgb(255, 255, 255);
   padding: 10px;
   border-radius: 5px;
@@ -42,7 +45,7 @@
 }
 
 .separador{
-margin-bottom: 1rem;
+/* margin-bottom: 1rem; */
 }
 
 .default{
