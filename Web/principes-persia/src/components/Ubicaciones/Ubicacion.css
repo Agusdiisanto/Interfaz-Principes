@@ -40,12 +40,10 @@
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* margin-bottom: 1rem; */
-  /* width: 1000px; */
 }
 
-.separador{
-/* margin-bottom: 1rem; */
+.ubicacion-card-elem {
+  width: 250px;
 }
 
 .default{

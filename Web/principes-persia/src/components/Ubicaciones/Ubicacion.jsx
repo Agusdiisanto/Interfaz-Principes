@@ -15,11 +15,9 @@ const Ubicacion = ({ ubicacion}) => {
 
   return (
     <div className={`ubicacion-card ${clase}`}>
-      <div className='separador'>
-        <h4>{ubicacion.nombreDeLaUbicacion}</h4>
-      </div>
-      <h6>Latitud: {ubicacion.latitud}</h6>
-      <h6>Longitud: {ubicacion.longitud}</h6>
+      <h4 className='ubicacion-card-elem ubicacion-name'>{ubicacion.nombreDeLaUbicacion}</h4>
+      <h6 className='ubicacion-card-elem'>{ubicacion.latitud}</h6>
+      <h6 className='ubicacion-card-elem'>{ubicacion.longitud}</h6>
     </div>
   );
 };
