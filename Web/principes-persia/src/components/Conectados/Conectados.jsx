@@ -32,7 +32,7 @@ const Conectados = () => {
 
   useEffect(() => {
     getConectados();
-  }, [ubicaciones,searchQuery]);
+  }, [searchQuery]);
 
 
   const checkAlerta = (ubicaciones) => {

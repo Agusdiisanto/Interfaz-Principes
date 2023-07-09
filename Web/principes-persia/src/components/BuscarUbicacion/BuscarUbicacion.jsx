@@ -33,7 +33,7 @@ const BuscarUbicacion = () => {
     if (searchQuery !== null) {
       getUbicacion();
     }
-  }, [ubicacion,searchQuery]);
+  }, [searchQuery]);
 
  
   return (
