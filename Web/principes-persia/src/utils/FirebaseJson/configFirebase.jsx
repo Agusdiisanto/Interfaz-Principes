@@ -2,14 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyASNFrE8gIrxxH-R426bXQ9FcA_52pgUAQ",
-    authDomain: "epersia-532d2.firebaseapp.com",
-    databaseURL: "https://epersia-532d2-default-rtdb.firebaseio.com",
-    projectId: "epersia-532d2",
-    storageBucket: "epersia-532d2.appspot.com",
-    messagingSenderId: "827401347420",
-    appId: "1:827401347420:web:c12d5072a8d04f1c796199",
-    measurementId: "G-RR2LT18Q7M"
+    apiKey: "AIzaSyBtNJFPcT05blodynWCZhZWmWlB1mdRaFw",
+    authDomain: "principesdeepersia.firebaseapp.com",
+    projectId: "principesdeepersia",
+    storageBucket: "principesdeepersia.appspot.com",
+    messagingSenderId: "634155459620",
+    appId: "1:634155459620:web:f032ced4ad06ac47e564b1",
+    measurementId: "G-WQTGKEE75Q"
 };
   
 const app = initializeApp(firebaseConfig);
