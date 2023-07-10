@@ -1,37 +1,38 @@
 import { MapContainer, TileLayer, Circle, Popup, Polygon } from 'react-leaflet';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { obtenerUbicaciones, obtenerDistritos } from '../../services/Api';
-import "leaflet/dist/images/marker-shadow.png";
-import Loader from "../../utils/Loader/Loader"
+import 'leaflet/dist/images/marker-shadow.png';
+import Loader from '../../utils/Loader/Loader';
 
 const CircleMarker = ({ ubicacion, zoom }) => {
   const zoomFactor = 0.5; // Ajusta el factor de reducción del radio del círculo
+  const baseRadius = 1000; // Ajusta el radio base según tus necesidades
+  const minRadius = 1000; // Establece un radio mínimo para evitar que se hagan demasiado pequeños
 
   const getRadius = () => {
-    const baseRadius = 6000; // Ajusta el radio base según tus necesidades
     const adjustedZoom = zoom - 1; // Ajusta el zoom según tus necesidades
     const radius = baseRadius * Math.pow(zoomFactor, adjustedZoom);
-    return Math.max(radius, 1000); // Establece un radio mínimo para evitar que se hagan demasiado pequeños
+    return Math.max(radius, minRadius);
   };
 
   const radius = getRadius();
 
-  let color;
-  switch (ubicacion.alerta) {
-    case 'Rojo':
-      color = 'red';
-      break;
-    case 'Amarillo':
-      color = 'yellow';
-      break;
-    case 'Verde':
-      color = 'green';
-      break;
-    default:
-      color = 'blue';
-      break;
-  }
+  const getColor = () => {
+    switch (ubicacion.alerta) {
+      case 'Rojo':
+        return 'red';
+      case 'Amarillo':
+        return 'yellow';
+      case 'Verde':
+        return 'green';
+      default:
+        return 'blue';
+    }
+  };
+
+  const color = getColor();
 
   return (
     <Circle
@@ -62,6 +63,7 @@ const Mapa = () => {
   const [distritos, setDistritos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [zoom, setZoom] = useState(12);
+  const navigate = useNavigate();
 
   useEffect(() => {
     Promise.all([obtenerUbicaciones(), obtenerDistritos()])
@@ -82,24 +84,34 @@ const Mapa = () => {
     return <Loader />;
   }
 
-  // Calcular la densidad de ubicaciones por distrito
-  const densityMap = {};
-  ubicaciones.forEach((ubicacion) => {
-    const { nombre } = ubicacion;
-    densityMap[nombre] = densityMap[nombre] ? densityMap[nombre] + 1 : 1;
-  });
+  const calculateDensityMap = () => {
+    const densityMap = {};
+    ubicaciones.forEach((ubicacion) => {
+      const { nombre } = ubicacion;
+      densityMap[nombre] = densityMap[nombre] ? densityMap[nombre] + 1 : 1;
+    });
+    return densityMap;
+  };
+
+  const densityMap = calculateDensityMap();
+
+  const handleReturnHome = () => {
+    navigate('/');
+  };
+
+  const handleMapCreated = (map) => {
+    setZoom(map.getZoom()); // Actualizar el valor inicial del zoom
+    map.on('zoomend', () => {
+      setZoom(map.getZoom());
+    });
+  };
 
   return (
     <MapContainer
       center={center}
       zoom={zoom}
       style={{ width: '100%', height: '100vh' }}
-      whenCreated={(map) => {
-        setZoom(map.getZoom()); // Actualizar el valor inicial del zoom
-        map.on('zoomend', () => {
-          setZoom(map.getZoom());
-        });
-      }}
+      whenCreated={handleMapCreated}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {distritos.map((distrito, index) => {
@@ -121,6 +133,16 @@ const Mapa = () => {
           zoom={zoom}
         />
       ))}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '10px',
+          left: '10px',
+          zIndex: 1000,
+        }}
+      >
+        <button className='goBackButton' style = {{marginBottom: "2rem", marginLeft : "2rem"}} onClick={handleReturnHome}>Volver al inicio</button>
+      </div>
     </MapContainer>
   );
 };
