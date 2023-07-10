@@ -1,0 +1,26 @@
+.conectar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conectar-form {
+  background-color: #1b2029;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+.form-elem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.form-label-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
