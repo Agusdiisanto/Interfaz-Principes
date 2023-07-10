@@ -25,8 +25,8 @@ const Ubicacion = ({ ubicacion, conectados = false }) => {
     <div className="ubicacion-card">
       <div className={`ubicacion-card-estado ${clase}`}></div>
       <p className="ubicacion-card-elem ubicacion-name">{ubicacion.nombreDeLaUbicacion}</p>
-      <p className="ubicacion-card-elem">Latitud: {ubicacion.latitud}</p>
-      <p className="ubicacion-card-elem">Longitud: {ubicacion.longitud}</p>
+      <p className="ubicacion-card-elem">{ubicacion.latitud}</p>
+      <p className="ubicacion-card-elem">{ubicacion.longitud}</p>
     </div>
   );
 };
