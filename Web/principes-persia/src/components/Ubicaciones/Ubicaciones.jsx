@@ -31,10 +31,18 @@ const Ubicaciones = () => {
           <h1 className="animate__animated animate__pulse title-container">Ubicaciones</h1>
           <div className="ubicaciones-list-container">
             <div className="ubicaciones-list">
-              {ubicaciones &&
-                ubicaciones.map((ubicacion) => (
-                  <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
-                ))}
+              <div className="ubicaciones-list-header">
+                <div className='ubicacion-estado'>Estado</div>
+                <p>Nombre</p>
+                <p>Latitud</p>
+                <p>Longtitud</p>
+              </div>  
+              <div className="ubicaciones-list-elems">
+                {ubicaciones &&
+                  ubicaciones.map((ubicacion) => (
+                    <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
+                  ))}
+              </div>
             </div>
           </div>
           <GoBack />

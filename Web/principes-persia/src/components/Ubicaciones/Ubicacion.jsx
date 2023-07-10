@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 
-const Ubicacion = ({ ubicacion}) => {
-  const opciones = ["Rojo", "Verde", "Amarillo"] 
+const Ubicacion = ({ ubicacion }) => {
+  const opciones = ["Rojo", "Verde", "Amarillo"];
   const [clase, setClase] = useState("");
 
   useEffect(() => {
@@ -14,10 +14,11 @@ const Ubicacion = ({ ubicacion}) => {
   }, [ubicacion.alerta]);
 
   return (
-    <div className={`ubicacion-card ${clase}`}>
-      <h4 className='ubicacion-card-elem ubicacion-name'>{ubicacion.nombreDeLaUbicacion}</h4>
-      <h6 className='ubicacion-card-elem'>{ubicacion.latitud}</h6>
-      <h6 className='ubicacion-card-elem'>{ubicacion.longitud}</h6>
+    <div className="ubicacion-card">
+      <div className={`ubicacion-card-estado ${clase}`}></div>
+      <p className="ubicacion-card-elem ubicacion-name">{ubicacion.nombreDeLaUbicacion}</p>
+      <p className="ubicacion-card-elem">{ubicacion.latitud}</p>
+      <p className="ubicacion-card-elem">{ubicacion.longitud}</p>
     </div>
   );
 };

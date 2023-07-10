@@ -4,11 +4,11 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  background-color: #322b5f;
+  background-color: #263346;
   padding: 2rem;
   margin: 20px;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 /* Estilos para la lista de ubicaciones */
@@ -17,18 +17,49 @@
   justify-content: center;
   width: 100%;
   height: 600px;
-  /* border: 2px solid red; */
 }
 
 .ubicaciones-list {
-  overflow-y: scroll;
-  background-color: #0f0d1e;
+  background-color: #131f30;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   padding: 40px;
-  /* border: 2px solid blue; */
   width: 1000px;
+}
+
+.ubicaciones-list-header {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 0;
+}
+
+.ubicaciones-list-header p {
+  width: 250px;
+  font-weight: bold;
+  margin: 0;
+  color: #445267;
+}
+
+.ubicaciones-list-elems {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(15, 25, 39, 0.726);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #213958;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #254063;
 }
 
 /* Estilos para cada ubicación */
@@ -36,48 +67,57 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  color:rgb(255, 255, 255);
-  padding: 10px;
+  color: rgb(255, 255, 255);
+  padding: 5px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .ubicacion-card-elem {
+  margin: 0;
+  font-size: 14px;
   width: 250px;
 }
 
-.default{
-background-color:rgb(66, 66, 66) !important;
-}
-
-.Verde{
-background-color:rgb(36, 113, 0) !important;
-}
-
-.Rojo{
-background-color:rgb(150, 0, 0) !important;
-}
-
-.Amarillo{
-background-color:rgb(192, 185, 0) !important;
-}
-
-.ubicacion-card h4 {
-  margin: 0;
-  font-size: 18px;
+.ubicacion-name {
+  font-size: 16px;
   font-weight: bold;
 }
 
-.ubicacion-card h6 {
-  margin: 5px 0;
-  font-size: 14px;
-  margin-bottom: 5px;
+.ubicacion-estado {
+  width: 100px;
+  font-weight: bold;
+  color: #445267;
 }
 
-.error-mensaje{
-width: 100%;
-opacity: 0.6;
-text-align: center;
-padding: 2rem;
-margin-bottom: 4rem;
+.ubicacion-card-estado {
+  margin: 0px 60px 0px 20px;
+  width: 20px;
+  font-weight: bold;
+  color: #445267;
+  height: 20px;
+  border-radius: 50px;
+}
+
+.default {
+  background-color: rgb(66, 66, 66) !important;
+}
+
+.Verde {
+  background-color: rgb(36, 113, 0) !important;
+}
+
+.Rojo {
+  background-color: rgb(218, 0, 0) !important;
+}
+
+.Amarillo {
+  background-color: rgb(192, 185, 0) !important;
+}
+
+.error-mensaje {
+  width: 100%;
+  opacity: 0.6;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
 }
