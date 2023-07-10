@@ -39,7 +39,7 @@ const Conectar = () => {
 
   return (
     <div className="conectar-container">
-      <h1>Conectar</h1>
+      <h1 className="title">Conectar</h1>
       <form className="conectar-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-elem">
           <label htmlFor="nombreOrigen" className="form-label">

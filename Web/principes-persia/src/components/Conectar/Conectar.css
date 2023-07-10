@@ -6,6 +6,13 @@
   margin-top: 50px;
 }
 
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
 .conectar-form {
   background-color: #192938;
   border-radius: 8px;
@@ -14,6 +21,18 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-elem {
@@ -27,6 +46,7 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
+  color: #fff;
 }
 
 .error-message {
@@ -49,8 +69,19 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
 }
 
 .go-back-container {
   margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.go-back-container.show {
+  opacity: 1;
 }
