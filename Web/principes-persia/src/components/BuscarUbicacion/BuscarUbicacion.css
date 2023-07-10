@@ -1,0 +1,55 @@
+.ubicaciones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+}
+  
+.ubicacion-container {
+    margin-top: 4rem;
+    animation: fadeIn 0.5s ease;
+}
+  
+.mensaje-alerta {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+  
+.mensaje-alerta.mensaje-Rojo {
+    background-color: #ff5454;
+    color: #fff;
+}
+  
+.mensaje-alerta.mensaje-Amarillo {
+    background-color: #ffc107;
+    color: #000;
+}
+  
+.mensaje-alerta.mensaje-Verde {
+    background-color: #28a745;
+    color: #fff;
+}
+  
+.error-mensaje {
+    margin-top: 20px;
+    color: #ff0000;
+}
+  
+.go-back-container {
+    display: flex;
+    margin-top: 5rem;
+    padding: 2rem;
+}
+  
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
