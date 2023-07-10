@@ -9,20 +9,29 @@ const Conectar = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    reset
   } = useForm();
-  
-  const [selectedValue, setSelectedValue] = useState('');
+
+  const [selectedValue, setSelectedValue] = useState("");
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
 
   const [error, setErrorMessage] = useState("");
+
   const onSubmit = async (data) => {
     try {
-      await conectarUbicaciones(data);
+      const conectarDTO = {
+        ubicacionOrigen: data.nombreOrigen,
+        ubicacionDestino: data.nombreDestino,
+        tipoDeCamino: selectedValue
+      };
+
+      await conectarUbicaciones(conectarDTO);
       console.log("Las ubicaciones se han conectado correctamente");
+      reset(); // Reinicia el formulario
+      setErrorMessage("");
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -33,10 +42,12 @@ const Conectar = () => {
       <h1>Conectar</h1>
       <form className="conectar-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-elem">
-          <div className="form-label-container">
-            <label htmlFor="nombreOrigen" className="form-label">Ubicación origen</label>
-            {errors.nombreOrigen && (<p className="error-message">Requerido</p>)}
-          </div>
+          <label htmlFor="nombreOrigen" className="form-label">
+            Ubicación origen
+          </label>
+          {errors.nombreOrigen && (
+            <p className="error-message">Este campo es requerido</p>
+          )}
           <input
             type="text"
             id="nombreOrigen"
@@ -45,10 +56,12 @@ const Conectar = () => {
           />
         </div>
         <div className="form-elem">
-          <div className="form-label-container">
-            <label htmlFor="nombreDestino" className="form-label">Ubicación destino</label>
-            {errors.nombreDestino && (<p className="error-message">Requerido</p>)}
-          </div>
+          <label htmlFor="nombreDestino" className="form-label">
+            Ubicación destino
+          </label>
+          {errors.nombreDestino && (
+            <p className="error-message">Este campo es requerido</p>
+          )}
           <input
             type="text"
             id="nombreDestino"
@@ -57,24 +70,32 @@ const Conectar = () => {
           />
         </div>
         <div className="form-elem">
-          <div className="form-label-container">
-            <label htmlFor="tipoCamino" className="form-label">Tipo de camino</label>
-            {errors.tipoCamino && (<p className="error-message">Requerido</p>)}
-          </div>
-          <select id="tipoCamino" value={selectedValue} onChange={handleSelectChange}>
+          <label htmlFor="tipoCamino" className="form-label">
+            Tipo de camino
+          </label>
+          {errors.tipoCamino && (
+            <p className="error-message">Este campo es requerido</p>
+          )}
+          <select
+            id="tipoCamino"
+            value={selectedValue}
+            onChange={handleSelectChange}
+            className={`form-input ${errors.tipoCamino ? "error" : ""}`}
+          >
             <option value="">Selecciona...</option>
             <option value="tierra">Tierra</option>
             <option value="mar">Mar</option>
             <option value="aire">Aire</option>
           </select>
         </div>
-        <div className="summit-container">
-          <button type="submit" className="submit-button">
-            Conectar
-          </button>
-        </div>
+        <button type="submit" className="submit-button">
+          Conectar
+        </button>
       </form>
-      <GoBack />
+      {error && <h2 className="error-message">{error}</h2>}
+      <div className="go-back-container">
+        <GoBack />
+      </div>
     </div>
   );
 };

@@ -2,14 +2,6 @@ import axios from 'axios';
 
 const BASE_URL = 'http://localhost:8080/ubicacion';
 
-const crearUbicacion = async (ubicacionDTO) => {
-  try {
-    const response = await axios.post(`${BASE_URL}`, ubicacionDTO);
-    return response.data;
-  } catch (error) {
-    throw new Error(error.response.data);
-  }
-};
 
 const recuperarUbicacion = async (ubicacionNombre) => {
   try {
@@ -66,15 +58,6 @@ const obtenerConectados = async (ubicacionOrigen) => {
   }
 };
 
-const expandirUbicacion = async (ubicacionNombre) => {
-  try {
-    const response = await axios.put(`${BASE_URL}/expandir/${ubicacionNombre}`);
-    return response.data;
-  } catch (error) {
-    throw new Error(error.response.data);
-  }
-};
-
 const obtenerDistritos = async () => {
   try {
     const response = await axios.get(`http://localhost:8080/distrito/distritos`);
@@ -85,7 +68,6 @@ const obtenerDistritos = async () => {
 };
 
 export {
-  crearUbicacion,
   recuperarUbicacion,
   obtenerUbicaciones,
   obtenerDistritos,
@@ -93,5 +75,4 @@ export {
   moverMasCorto,
   conectarUbicaciones,
   obtenerConectados,
-  expandirUbicacion,
 };
