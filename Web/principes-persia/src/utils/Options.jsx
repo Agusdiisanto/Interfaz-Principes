@@ -37,13 +37,6 @@ export const Options = [
     path: 'conectar',
   },
   {
-    label: 'Expandir',
-    description: 'Dado una ubicacion expande e infecta.',
-    icon: faVirus,
-    className: 'option-expandir',
-    path: 'expandir',
-  },
-  {
     label: 'Suscribirte',
     description: 'Suscríbete a una ubicación para recibir actualizaciones y notificaciones.',
     icon: faBell,

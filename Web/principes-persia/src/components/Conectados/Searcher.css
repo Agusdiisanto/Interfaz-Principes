@@ -20,10 +20,11 @@
     align-items: center;
     border-radius: 50px;
     width: 40rem;
-    height: 6rem;
+    height: 4.5rem;
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgb(32, 35, 39);
+    margin-top: 3rem;
   }
   
   .search-icon {

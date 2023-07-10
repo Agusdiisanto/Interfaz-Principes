@@ -1,13 +1,14 @@
 import { useState, useEffect, useContext} from 'react';
 import { obtenerConectados } from '../../services/Api';
 import Ubicacion from '../Ubicaciones/Ubicacion';
-import "../Ubicaciones/Ubicacion.css"
+import "./Conectados.css"
 import GoBack from '../../utils/GoBack';
 import Loader from '../../utils/Loader/Loader';
 import Searcher from './Searcher';
 import Modal from '../../utils/Modal/Modal';
 import Notificacion from '../Subscripcion/Notificacion';
 import { UbicacionContext } from '../../context/UbicacionContext';
+
 
 const Conectados = () => {
   const { mensaje,setConteo} = useContext(UbicacionContext);
@@ -54,12 +55,11 @@ const Conectados = () => {
   }
 
   return (
-    <div className="ubicaciones-container">
+    <div className="conectados-container">
       {showModal ? (<Modal onCloseModal = {() => setShowModal(false)} notificacion={alerta}/>) : null }
       {isLoading && (
         <Loader />
         )} 
-
       {alerta && mensaje.nombre === searchQuery ? (
         <Notificacion openModal = {handleOpenModal}/>
         ) : null}
@@ -67,9 +67,9 @@ const Conectados = () => {
           <h1 className="animate__animated animate__pulse title-container">Conectados:</h1>
           <Searcher setQuery={setSearchQuery} />
           {ubicaciones && ubicaciones.length > 0 ? (
-            <div className="ubicaciones-list">
+            <div className="conectados-list">
                 {ubicaciones.map((ubicacion) => (
-                <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
+                <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} conectados = {true}/>
                 ))}
             </div>
             ) : searchQuery !== null && <h1 className='sub-title'>{NO_CONECTADOS_MESSAGE}</h1>}
