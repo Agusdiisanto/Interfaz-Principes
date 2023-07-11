@@ -93,9 +93,7 @@ const Conectar = () => {
         </button>
       </form>
       {error && <h2 className="error-message">{error}</h2>}
-      <div className="go-back-container">
-        <GoBack />
-      </div>
+      <GoBack />
     </div>
   );
 };

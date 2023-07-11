@@ -75,13 +75,3 @@
 .submit-button:hover {
   background-color: #45a049;
 }
-
-.go-back-container {
-  margin-top: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.go-back-container.show {
-  opacity: 1;
-}
