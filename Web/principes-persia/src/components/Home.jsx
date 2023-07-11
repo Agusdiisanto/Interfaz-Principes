@@ -21,9 +21,9 @@ const Home = () => {
       {mensaje ? (
         <Notificacion openModal = {handleOpenModal}/>
       ) : null}
-      <h2 className="animate__animated animate__pulse title-container">Home</h2>
+      <h2 className="animate__animated animate__pulse title-container">Príncipes de EPERSia</h2>
       <div className="option-container">
-        <h3>Seleccione una opción:</h3>
+        <h3>Sistema de suscripción a ubicaciones</h3>
         <div className="options-grid">
           <MapToList lista={Options} />
         </div>
