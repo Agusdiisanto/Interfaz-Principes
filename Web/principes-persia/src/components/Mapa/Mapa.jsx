@@ -1,10 +1,11 @@
-import { MapContainer, TileLayer, Circle, Popup, Polygon } from 'react-leaflet';
-import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
-import { obtenerUbicaciones, obtenerDistritos } from '../../services/Api';
-import 'leaflet/dist/images/marker-shadow.png';
-import Loader from '../../utils/Loader/Loader';
+import { MapContainer, TileLayer, Circle, Popup, Polygon } from "react-leaflet";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import { obtenerUbicaciones, obtenerDistritos } from "../../services/Api";
+import "leaflet/dist/images/marker-shadow.png";
+import Loader from "../../utils/Loader/Loader";
+import GoBack from "../../utils/GoBack";
 
 const CircleMarker = ({ ubicacion, zoom }) => {
   const zoomFactor = 0.5; // Ajusta el factor de reducción del radio del círculo
@@ -21,14 +22,14 @@ const CircleMarker = ({ ubicacion, zoom }) => {
 
   const getColor = () => {
     switch (ubicacion.alerta) {
-      case 'Rojo':
-        return 'red';
-      case 'Amarillo':
-        return 'yellow';
-      case 'Verde':
-        return 'green';
+      case "Rojo":
+        return "red";
+      case "Amarillo":
+        return "yellow";
+      case "Verde":
+        return "green";
       default:
-        return 'blue';
+        return "blue";
     }
   };
 
@@ -73,7 +74,7 @@ const Mapa = () => {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.error('Error al obtener las ubicaciones y distritos:', error);
+        console.error("Error al obtener las ubicaciones y distritos:", error);
         setIsLoading(false);
       });
   }, []);
@@ -96,12 +97,12 @@ const Mapa = () => {
   const densityMap = calculateDensityMap();
 
   const handleReturnHome = () => {
-    navigate('/');
+    navigate("/");
   };
 
   const handleMapCreated = (map) => {
     setZoom(map.getZoom()); // Actualizar el valor inicial del zoom
-    map.on('zoomend', () => {
+    map.on("zoomend", () => {
       setZoom(map.getZoom());
     });
   };
@@ -110,7 +111,7 @@ const Mapa = () => {
     <MapContainer
       center={center}
       zoom={zoom}
-      style={{ width: '100%', height: '100vh' }}
+      style={{ width: "100%", height: "100vh" }}
       whenCreated={handleMapCreated}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -135,13 +136,13 @@ const Mapa = () => {
       ))}
       <div
         style={{
-          position: 'absolute',
-          bottom: '10px',
-          left: '10px',
+          position: "absolute",
+          bottom: "30px",
+          left: "30px",
           zIndex: 1000,
         }}
       >
-        <button className='goBackButton' style = {{marginBottom: "2rem", marginLeft : "2rem"}} onClick={handleReturnHome}>Volver al inicio</button>
+        <GoBack/>
       </div>
     </MapContainer>
   );
