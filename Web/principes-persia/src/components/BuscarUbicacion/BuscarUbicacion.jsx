@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from 'react';
-import { recuperarUbicacion } from '../../services/Api';
-import Ubicacion from '../Ubicaciones/Ubicacion';
-import "./BuscarUbicacion.css"
-import GoBack from '../../utils/GoBack';
-import Loader from '../../utils/Loader/Loader';
-import Searcher from '../Conectados/Searcher';
-import { UbicacionContext } from '../../context/UbicacionContext';
+import { useState, useEffect, useContext } from "react";
+import { recuperarUbicacion } from "../../services/Api";
+import Ubicacion from "../Ubicaciones/Ubicacion";
+import "./BuscarUbicacion.css";
+import GoBack from "../../utils/GoBack";
+import Loader from "../../utils/Loader/Loader";
+import Searcher from "../Conectados/Searcher";
+import { UbicacionContext } from "../../context/UbicacionContext";
 
 const BuscarUbicacion = () => {
   const { mensaje } = useContext(UbicacionContext);
@@ -24,7 +24,7 @@ const BuscarUbicacion = () => {
         })
         .catch((error) => {
           setUbicacion(null);
-          setError('No se ha encontrado esa ubicación');
+          setError("No se ha encontrado esa ubicación");
         })
         .finally(() => {
           setIsLoading(false);
@@ -40,22 +40,26 @@ const BuscarUbicacion = () => {
 
   return (
     <div className="ubicaciones-container">
-      {isLoading && (
-        <Loader />
-      )} 
-      <Searcher setQuery={setSearchQuery} />
-      <div className="ubicacion-container">
-        {ubicacion !== null && <Ubicacion ubicacion={ubicacion}/>}
-      </div>
-      {mensaje && searchQuery === mensaje.nombre && (
-        <h2 className={`mensaje-alerta mensaje-${mensaje.alerta}`}>
-          {mensaje.alerta === 'Rojo' && '¡Ten mucho cuidado! Esta ubicación se encuentra en alerta roja.'}
-          {mensaje.alerta === 'Amarillo' && '¡Ten cuidado! Esta ubicación se encuentra en alerta amarilla.'}
-          {mensaje.alerta === 'Verde' && 'Esta ubicación se encuentra en alerta verde. ¡Todo está bien!'}
-        </h2>
-      )}
-      {error && <h2 className="error-mensaje">{error}</h2>}
-      <GoBack />
+      {isLoading && <Loader />}
+      <h2 className="animate__animated animate__pulse title-container">Buscar ubicación</h2>
+      <body className="ubicaciones-body">
+        <Searcher setQuery={setSearchQuery} />
+        <div className="ubicacion-container">
+          {ubicacion !== null && <Ubicacion ubicacion={ubicacion} />}
+        </div>
+        {mensaje && searchQuery === mensaje.nombre && (
+          <h2 className={`mensaje-alerta mensaje-${mensaje.alerta}`}>
+            {mensaje.alerta === "Rojo" &&
+              "¡Ten mucho cuidado! Esta ubicación se encuentra en alerta roja."}
+            {mensaje.alerta === "Amarillo" &&
+              "¡Ten cuidado! Esta ubicación se encuentra en alerta amarilla."}
+            {mensaje.alerta === "Verde" &&
+              "Esta ubicación se encuentra en alerta verde. ¡Todo está bien!"}
+          </h2>
+        )}
+        {error && <h2 className="error-mensaje">{error}</h2>}
+        <GoBack />
+      </body>
     </div>
   );
 };

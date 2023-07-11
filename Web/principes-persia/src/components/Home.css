@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #111b21;
+  height: 100vh;
 }
 
 .title-container {
@@ -9,7 +11,7 @@
   text-align: center;
   opacity: 0.9;
   font-weight: 700;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .sub-title {
@@ -17,7 +19,7 @@
   text-align: center;
   opacity: 0.3;
   font-weight: 700;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .option-container {
@@ -69,5 +71,3 @@
     width: 50%;
   }
 }
-
-
