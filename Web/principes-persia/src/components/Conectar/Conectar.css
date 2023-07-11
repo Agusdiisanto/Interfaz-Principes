@@ -13,14 +13,20 @@
   text-align: center;
 }
 
+.conectar-body {
+  display: flex;
+  flex-direction: row;
+}
+
 .conectar-form {
-  background-color: #192938;
-  border-radius: 8px;
-  padding: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #1b2029;
+  width: 25rem;
+  padding: 2rem;
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -39,7 +45,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 300px;
+  gap: 10px;
 }
 
 .form-label {
@@ -54,11 +60,14 @@
   margin: 0;
 }
 
-.form-input {
+.conectar-form-input {
   padding: 10px;
+  border: 1px solid #242d39;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 100%;
+  transition: border-color 0.3s ease;
+  background-color: #1c1f2c;
+  color: #ffffff;
+  width: 380px;
 }
 
 .submit-button {

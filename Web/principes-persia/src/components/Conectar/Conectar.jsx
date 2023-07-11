@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import GoBack from "../../utils/GoBack";
 import "./Conectar.css";
+import ConexionImg from "./conexion.webp"
 
 const Conectar = () => {
   const {
@@ -40,58 +41,61 @@ const Conectar = () => {
   return (
     <div className="conectar-container">
       <h1 className="title">Conectar</h1>
-      <form className="conectar-form" onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-elem">
-          <label htmlFor="nombreOrigen" className="form-label">
-            Ubicación origen
-          </label>
-          {errors.nombreOrigen && (
-            <p className="error-message">Este campo es requerido</p>
-          )}
-          <input
-            type="text"
-            id="nombreOrigen"
-            {...register("nombreOrigen", { required: true })}
-            className={`form-input ${errors.nombreOrigen ? "error" : ""}`}
-          />
-        </div>
-        <div className="form-elem">
-          <label htmlFor="nombreDestino" className="form-label">
-            Ubicación destino
-          </label>
-          {errors.nombreDestino && (
-            <p className="error-message">Este campo es requerido</p>
-          )}
-          <input
-            type="text"
-            id="nombreDestino"
-            {...register("nombreDestino", { required: true })}
-            className={`form-input ${errors.nombreDestino ? "error" : ""}`}
-          />
-        </div>
-        <div className="form-elem">
-          <label htmlFor="tipoCamino" className="form-label">
-            Tipo de camino
-          </label>
-          {errors.tipoCamino && (
-            <p className="error-message">Este campo es requerido</p>
-          )}
-          <select
-            id="tipoCamino"
-            value={selectedValue}
-            onChange={handleSelectChange}
-            className={`form-input ${errors.tipoCamino ? "error" : ""}`}
-          >
-            <option value="">Selecciona...</option>
-            <option value="tierra">Tierra</option>
-            <option value="mar">Mar</option>
-            <option value="aire">Aire</option>
-          </select>
-        </div>
-        <button type="submit" className="submit-button">
-          Conectar
-        </button>
-      </form>
+      <body className="conectar-body">
+        <img src={ConexionImg} alt="conexion"/>
+        <form className="conectar-form" onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-elem">
+            <label htmlFor="nombreOrigen" className="form-label">
+              Ubicación origen
+            </label>
+            {errors.nombreOrigen && (
+              <p className="error-message">Este campo es requerido</p>
+            )}
+            <input
+              type="text"
+              id="nombreOrigen"
+              {...register("nombreOrigen", { required: true })}
+              className={`conectar-form-input ${errors.nombreOrigen ? "error" : ""}`}
+            />
+          </div>
+          <div className="form-elem">
+            <label htmlFor="nombreDestino" className="form-label">
+              Ubicación destino
+            </label>
+            {errors.nombreDestino && (
+              <p className="error-message">Este campo es requerido</p>
+            )}
+            <input
+              type="text"
+              id="nombreDestino"
+              {...register("nombreDestino", { required: true })}
+              className={`conectar-form-input ${errors.nombreDestino ? "error" : ""}`}
+            />
+          </div>
+          <div className="form-elem">
+            <label htmlFor="tipoCamino" className="form-label">
+              Tipo de camino
+            </label>
+            {errors.tipoCamino && (
+              <p className="error-message">Este campo es requerido</p>
+            )}
+            <select
+              id="tipoCamino"
+              value={selectedValue}
+              onChange={handleSelectChange}
+              className={`conectar-form-input ${errors.tipoCamino ? "error" : ""}`}
+            >
+              <option value="">Selecciona...</option>
+              <option value="tierra">Tierra</option>
+              <option value="mar">Mar</option>
+              <option value="aire">Aire</option>
+            </select>
+          </div>
+          <button type="submit" className="submit-button">
+            Conectar
+          </button>
+        </form>
+      </body>
       {error && <h2 className="error-message">{error}</h2>}
       <GoBack />
     </div>
