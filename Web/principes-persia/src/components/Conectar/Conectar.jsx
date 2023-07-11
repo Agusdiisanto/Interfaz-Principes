@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import GoBack from "../../utils/GoBack";
 import "./Conectar.css";
+import Check from "../../img/check.png"
 import ConexionImg from "./conexion.webp"
 
 const Conectar = () => {
@@ -14,6 +15,7 @@ const Conectar = () => {
   } = useForm();
 
   const [selectedValue, setSelectedValue] = useState("");
+  const [showCheck, setShowCheck] = useState(false);
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
@@ -30,16 +32,29 @@ const Conectar = () => {
       };
 
       await conectarUbicaciones(conectarDTO);
-      console.log("Las ubicaciones se han conectado correctamente");
-      reset(); // Reinicia el formulario
+      reset(); 
+      setShowCheck(true)
       setErrorMessage("");
     } catch (error) {
       setErrorMessage(error.message);
     }
   };
 
+  const handleCloseNotification = () => {
+    setShowCheck(false);
+  };
+
   return (
     <div className="conectar-container">
+      {showCheck && (
+          <div className="notification-container">
+            <img src={Check} alt="Check" />
+            <p>El vector se ha movido correctamente</p>
+            <button className="close-icon" onClick={handleCloseNotification}>
+              X
+            </button>
+          </div>
+        )}
       <h1 className="title-container">Conectar</h1>
       <body className="conectar-body">
         <img src={ConexionImg} alt="conexion"/>

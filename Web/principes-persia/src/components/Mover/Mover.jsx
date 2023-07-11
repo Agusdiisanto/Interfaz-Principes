@@ -7,12 +7,16 @@ import "./Mover.css";
 import { UbicacionContext } from "../../context/UbicacionContext";
 import Modal from "../../utils/Modal/Modal";
 import Notificacion from "../../components/Subscripcion/Notificacion";
+import Check from "../../img/check.png"
+
 
 const Mover = () => {
   const { mensaje, setConteo } = useContext(UbicacionContext);
   const [error, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [showCheck, setShowCheck] = useState(false);
   const [nombreUbicacion, setNombreUbicacion] = useState("");
+  const [isMoverMasCorto, setIsMoverMasCorto] = useState(false);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -33,6 +37,7 @@ const Mover = () => {
       if (isMoverMasCorto) {
         try {
           await moverMasCorto(vectorId, ubicacionNombre);
+          setShowCheck(true);
         } catch (error) {
           setErrorMessage(error.message);
           reset();
@@ -41,6 +46,7 @@ const Mover = () => {
       } else {
         try {
           await moverVector(vectorId, ubicacionNombre);
+          setShowCheck(true);
         } catch (error) {
           setErrorMessage(error.message);
           reset();
@@ -49,21 +55,28 @@ const Mover = () => {
       }
       reset();
       setErrorMessage("");
-      const mensajeExito = isMoverMasCorto
-        ? "El vector se ha movido por el camino más corto correctamente"
-        : "El vector se ha movido correctamente";
-      alert(mensajeExito);
     } catch (error) {
       setErrorMessage(error.message);
       reset();
     }
   };
 
-  const [isMoverMasCorto, setIsMoverMasCorto] = useState(false);
+  const handleCloseNotification = () => {
+    setShowCheck(false);
+  };
 
   return (
     <div className="main-container">
       <div className="bg-container">
+      {showCheck && (
+          <div className="notification-container">
+            <img src={Check} alt="Check" />
+            <p>El vector se ha movido correctamente</p>
+            <button className="close-icon" onClick={handleCloseNotification}>
+              X
+            </button>
+          </div>
+        )}
         {showModal
           ? <Modal onCloseModal = {() => setShowModal(false)} llegoUnVector = {true} />
           : null
