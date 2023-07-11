@@ -55,9 +55,7 @@ const BuscarUbicacion = () => {
         </h2>
       )}
       {error && <h2 className="error-mensaje">{error}</h2>}
-      <div className="go-back-container">
-        <GoBack />
-      </div>
+      <GoBack />
     </div>
   );
 };

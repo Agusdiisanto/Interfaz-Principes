@@ -38,12 +38,6 @@
     color: #ff0000;
 }
   
-.go-back-container {
-    display: flex;
-    margin-top: 5rem;
-    padding: 2rem;
-}
-  
 @keyframes fadeIn {
     0% {
       opacity: 0;
