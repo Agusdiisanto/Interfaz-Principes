@@ -73,7 +73,7 @@ const Subscribe = () => {
 
   return (
     <div className='subscribe-container'>
-      <h1 className='subscribe-title'>¡Suscríbete y recibe notificaciones!</h1>
+      <h1 className='title-container'>¡Suscríbete y recibe notificaciones!</h1>
       <div className='subscribe-scroll-container'>
         <Carousel
           showArrows={true}

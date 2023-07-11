@@ -40,7 +40,7 @@ const Conectar = () => {
 
   return (
     <div className="conectar-container">
-      <h1 className="title">Conectar</h1>
+      <h1 className="title-container">Conectar</h1>
       <body className="conectar-body">
         <img src={ConexionImg} alt="conexion"/>
         <form className="conectar-form" onSubmit={handleSubmit(onSubmit)}>
