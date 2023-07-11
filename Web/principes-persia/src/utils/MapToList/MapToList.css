@@ -17,7 +17,6 @@
     font-size: 1.2rem;
 }
 
-
 .option-card:hover{
     cursor: pointer;
     box-shadow: none;
@@ -35,26 +34,24 @@
   opacity: 0.65;
 }
 
-
-
 .option-crear{
-    background-color: #664675;
-    box-shadow: 0px 0px 10px 4px rgba(176, 72, 255, 0.6);
+    background-color: #008888;
+    box-shadow: 0px 0px 10px 4px rgb(85, 166, 175);
 }
 
 .option-search{
-    background-color: #41676e;
-    box-shadow: 0px 0px 10px 4px rgba(38, 162, 193, 0.6);
+    background-color: #3b28a8;
+    box-shadow: 0px 0px 10px 4px rgba(97, 136, 251, 0.6);
 }
 
 .option-all{
     background-color: #5e6735;
-    box-shadow: 0px 0px 10px 4px rgba(235, 251, 114, 0.6);
+    box-shadow: 0px 0px 10px 4px rgba(114, 166, 0, 0.6);
 }
 
 .option-move{
-    background-color: #8a1b3e;
-    box-shadow: 0px 0px 10px 4px rgba(209, 7, 81, 0.6);
+    background-color: #a82b2b;
+    box-shadow: 0px 0px 10px 4px rgba(255, 0, 0, 0.6);
 }
 
 .option-shortMove{
@@ -63,18 +60,18 @@
 }
 
 .option-connected{
-    background-color: #4c7236;
-    box-shadow: 0px 0px 10px 4px rgba(74, 193, 37, 0.6);
+    background-color: #427226;
+    box-shadow: 0px 0px 10px 4px rgba(96, 255, 47, 0.6);
 }
 
 .option-connect{
-    background-color: #906a23;
-    box-shadow: 0px 0px 10px 4px rgba(255, 170, 0, 0.6);
+    background-color: #8b6724;
+    box-shadow: 0px 0px 10px 4px rgba(215, 168, 74, 0.6);
 }
 
 .option-subscribe{
-    background-color: #802d80;
-    box-shadow: 0px 0px 10px 4px rgba(195, 0, 255, 0.6);
+    background-color: #921c92;
+    box-shadow: 0px 0px 10px 4px rgb(195, 0, 255);
 }
 
 .option-expandir{

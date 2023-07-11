@@ -7,13 +7,14 @@
   --negro: #000;
 }
 
-
-
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: black;
-  color:white;
+  background-image: url("img/fondo-home.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
   overflow: hidden;
 }
+
+

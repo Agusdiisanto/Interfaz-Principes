@@ -63,7 +63,6 @@ const Conectados = () => {
       {alerta && mensaje.nombre === searchQuery ? (
         <Notificacion openModal = {handleOpenModal}/>
         ) : null}
-
           <h1 className="animate__animated animate__pulse title-container">Conectados:</h1>
           <Searcher setQuery={setSearchQuery} />
           {ubicaciones && ubicaciones.length > 0 ? (
@@ -73,9 +72,7 @@ const Conectados = () => {
                 ))}
             </div>
             ) : searchQuery !== null && <h1 className='sub-title'>{NO_CONECTADOS_MESSAGE}</h1>}
-
-          <GoBack />
-        
+        <GoBack />
     </div>
   );
 };
