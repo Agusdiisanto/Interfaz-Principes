@@ -78,7 +78,7 @@ const Mover = () => {
           </div>
         )}
         {showModal
-          ? <Modal onCloseModal = {() => setShowModal(false)} llegoUnVector = {true} />
+          ? <Modal onCloseModal = {() => setShowModal(false)} titulo={""}/>
           : null
         }
         {mensaje && mensaje.nombre === nombreUbicacion
