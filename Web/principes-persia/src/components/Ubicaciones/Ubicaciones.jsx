@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { obtenerUbicaciones } from '../../services/Api';
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import Ubicacion from './Ubicacion';
 import "./Ubicacion.css"
 import GoBack from '../../utils/GoBack';
@@ -8,22 +8,23 @@ import Loader from '../../utils/Loader/Loader';
 const Ubicaciones = () => {
   const [ubicaciones, setUbicaciones] = useState(null); 
   const [isLoading, setIsLoading] = useState(true); 
-
-  const getUbicaciones = () => {
-    obtenerUbicaciones()
-      .then((response) => {
-        setUbicaciones(response);
-        setIsLoading(false); 
-      })
-      .catch((error) => {
-        console.error('Error al obtener las ubicaciones:', error);
-      });
-  };
+  const db = getFirestore(); // Obtén una referencia a Firestore
 
   useEffect(() => {
-    getUbicaciones();
-  }, []);
+    const ubicacionesRef = collection(db, 'ubicacion');
 
+    const unsubscribe = onSnapshot(ubicacionesRef, (snapshot) => {
+      const ubicacionesData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setUbicaciones(ubicacionesData);
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe(); // Cancela la suscripción cuando el componente se desmonta
+  }, [db]); 
+  
   return (
     <div className="ubicaciones">
       {isLoading ? (<Loader />) : (
@@ -40,7 +41,7 @@ const Ubicaciones = () => {
               <div className="ubicaciones-list-elems">
                 {ubicaciones &&
                   ubicaciones.map((ubicacion) => (
-                    <Ubicacion key={ubicacion.nombreDeLaUbicacion} ubicacion={ubicacion} />
+                    <Ubicacion key={ubicacion.id} ubicacion={ubicacion} />
                   ))}
               </div>
             </div>

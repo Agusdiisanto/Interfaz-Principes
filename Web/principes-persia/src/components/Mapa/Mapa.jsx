@@ -1,8 +1,8 @@
 import { MapContainer, TileLayer, Circle, Popup, Polygon } from "react-leaflet";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
-import { obtenerUbicaciones, obtenerDistritos } from "../../services/Api";
+import { obtenerDistritos } from "../../services/Api";
+import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 import "leaflet/dist/images/marker-shadow.png";
 import Loader from "../../utils/Loader/Loader";
 import GoBack from "../../utils/GoBack";
@@ -64,26 +64,52 @@ const Mapa = () => {
   const [distritos, setDistritos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [zoom, setZoom] = useState(12);
-  const navigate = useNavigate();
+  const db = getFirestore(); // Obtén una referencia a Firestore
 
   useEffect(() => {
-    Promise.all([obtenerUbicaciones(), obtenerDistritos()])
-      .then(([ubicacionesResponse, distritosResponse]) => {
-        setUbicaciones(ubicacionesResponse);
+    const loadDistritos = async () => {
+      try {
+        const distritosResponse = await obtenerDistritos();
         setDistritos(distritosResponse);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error al obtener las ubicaciones y distritos:", error);
-        setIsLoading(false);
-      });
+      } catch (error) {
+        console.error("Error al obtener los distritos:", error);
+      }
+    };
+
+    loadDistritos();
   }, []);
+
+  useEffect(() => {
+    const ubicacionesRef = collection(db, "ubicacion");
+
+    const unsubscribe = onSnapshot(ubicacionesRef, (snapshot) => {
+      const ubicacionesData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setUbicaciones(ubicacionesData);
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe(); // Cancela la suscripción cuando el componente se desmonta
+  }, [db]);
 
   const center = [-34.7207, -58.2528];
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  useEffect(() => {
+    const ubicacionesRef = collection(db, "ubicacion");
+  
+    const unsubscribe = onSnapshot(ubicacionesRef, (snapshot) => {
+      const ubicacionesData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setUbicaciones(ubicacionesData);
+      setIsLoading(false);
+    });
+  
+    return () => unsubscribe(); // Cancela la suscripción cuando el componente se desmonta
+  }, [db]);
 
   const calculateDensityMap = () => {
     const densityMap = {};
@@ -96,16 +122,16 @@ const Mapa = () => {
 
   const densityMap = calculateDensityMap();
 
-  const handleReturnHome = () => {
-    navigate("/");
-  };
-
   const handleMapCreated = (map) => {
     setZoom(map.getZoom()); // Actualizar el valor inicial del zoom
     map.on("zoomend", () => {
       setZoom(map.getZoom());
     });
   };
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <MapContainer
@@ -129,7 +155,7 @@ const Mapa = () => {
       })}
       {ubicaciones.map((ubicacion) => (
         <CircleMarker
-          key={ubicacion.nombre}
+          key={ubicacion.id}
           ubicacion={ubicacion}
           zoom={zoom}
         />
@@ -142,7 +168,7 @@ const Mapa = () => {
           zIndex: 1000,
         }}
       >
-        <GoBack/>
+        <GoBack />
       </div>
     </MapContainer>
   );

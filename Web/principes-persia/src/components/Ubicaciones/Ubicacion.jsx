@@ -31,7 +31,7 @@ const Ubicacion = ({ ubicacion, conectados = false }) => {
   ) : (
     <div className="ubicacion-card">
       <div className={`ubicacion-card-estado ${clase}`}></div>
-      <p className="ubicacion-card-elem ubicacion-name">{ubicacion.nombreDeLaUbicacion}</p>
+      <p className="ubicacion-card-elem ubicacion-name">{ubicacion.nombre}</p>
       <p className="ubicacion-card-elem">{latitudRedondeada}</p>
       <p className="ubicacion-card-elem">{longitudRedondeada}</p>
     </div>
