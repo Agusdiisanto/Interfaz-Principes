@@ -23,7 +23,7 @@ const Ubicacion = ({ ubicacion, conectados = false }) => {
   return conectados ? (
     <div className={`conectados-card ${clase}`}>
       <div className="separador">
-        <h4>{ubicacion.nombreDeLaUbicacion}</h4>
+        <h4>{ubicacion.nombre}</h4>
       </div>
       <h6>Latitud: {latitudRedondeada}</h6>
       <h6>Longitud: {longitudRedondeada}</h6>
@@ -40,7 +40,7 @@ const Ubicacion = ({ ubicacion, conectados = false }) => {
 
 Ubicacion.propTypes = {
   ubicacion: PropTypes.shape({
-    nombreDeLaUbicacion: PropTypes.string.isRequired,
+    nombre: PropTypes.string.isRequired,
     alerta: PropTypes.string.isRequired,
     latitud: PropTypes.number.isRequired,
     longitud: PropTypes.number.isRequired,
