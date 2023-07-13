@@ -103,11 +103,13 @@ const Conectados = () => {
     <div className="conectados-container">
       {showModal && <Modal onCloseModal={() => setShowModal(false)} notificacion={alerta} />}
       {alerta && mensaje.nombre === searchQuery && <Notificacion openModal={handleOpenModal} />}
-      <h1 className="animate__animated animate__pulse title-container">Conectados:</h1>
+      <h1 className="animate__animated animate__pulse title-container">Conectados</h1>
       <Searcher setQuery={setSearchQuery} />
-      <div className="loader-container">
-        {isLoading && <Loader />}
-      </div>
+      {isLoading &&
+        <div className="loader-container">
+          <Loader />
+        </div>
+      }
       {errorMessage ? (
         <h1 className='sub-title'>{errorMessage}</h1>
       ) : ubicaciones.length > 0 ? (

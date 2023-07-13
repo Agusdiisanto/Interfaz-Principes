@@ -23,18 +23,18 @@ export const Options = [
     path: 'mover',
   },
   {
-    label: 'Conectados',
-    description: 'Muestra todas las ubicaciones conectadas de grado 1ª en el sistema.',
-    icon: faCodeBranch,
-    className: 'option-connected',
-    path: 'conectados',
-  },
-  {
     label: 'Conectar',
     description: 'Conecta dos ubicaciones mediante un camino.',
     icon: faLink,
     className: 'option-connect',
     path: 'conectar',
+  },
+  {
+    label: 'Conectados',
+    description: 'Muestra todas las ubicaciones conectadas de grado 1ª en el sistema.',
+    icon: faCodeBranch,
+    className: 'option-connected',
+    path: 'conectados',
   },
   {
     label: 'Suscribirte',

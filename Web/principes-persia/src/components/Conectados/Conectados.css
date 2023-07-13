@@ -16,6 +16,8 @@
   gap: 10px;
   padding: 30px;
   background-color: #0f1926;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 /* Estilos para cada ubicación */
@@ -41,9 +43,11 @@
   font-size: 14px;
   margin-bottom: 5px;
 }
+
 .loader-container {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   margin-top: 20px;
   margin-bottom: 20px;
 }
