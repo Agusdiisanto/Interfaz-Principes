@@ -4,7 +4,7 @@
   margin: 20px;
 }
   
-  /* Estilos para la lista de ubicaciones */
+/* Estilos para la lista de ubicaciones */
 .conectados-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,17 +12,16 @@
   padding-bottom: 2rem;
 }
   
-  /* Estilos para cada ubicación */
+/* Estilos para cada ubicación */
 .conectados-card {
   color:rgb(255, 255, 255);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
-  margin-top: 5rem;
 }
-  
-.separador{
+
+.separador {
   margin-bottom: 1rem;
 }
 
@@ -38,3 +37,9 @@
   margin-bottom: 5px;
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
