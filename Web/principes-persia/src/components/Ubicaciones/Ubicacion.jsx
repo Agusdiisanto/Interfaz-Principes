@@ -20,7 +20,7 @@ const Ubicacion = ({ ubicacion, conectados = false }) => {
   const latitudRedondeada = redondearCoordenadas(ubicacion.latitud);
   const longitudRedondeada = redondearCoordenadas(ubicacion.longitud);
 
-  return conectados ? (
+  return( /*conectados ? (
     <div className={`conectados-card ${clase}`}>
       <div className="separador">
         <h4>{ubicacion.nombre}</h4>
@@ -28,7 +28,7 @@ const Ubicacion = ({ ubicacion, conectados = false }) => {
       <h6>Latitud: {latitudRedondeada}</h6>
       <h6>Longitud: {longitudRedondeada}</h6>
     </div>
-  ) : (
+  ) : (*/
     <div className="ubicacion-card">
       <div className={`ubicacion-card-estado ${clase}`}></div>
       <p className="ubicacion-card-elem ubicacion-name">{ubicacion.nombre}</p>
