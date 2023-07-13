@@ -3,9 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding: 2rem;
-  margin: 20px;
   height: 100vh;
   overflow-y: auto;
 }
@@ -15,7 +12,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 25vw; /* Reducir el alto de la lista para dar espacio al botón GoBack */
+  height: 30vw; /* Reducir el alto de la lista para dar espacio al botón GoBack */
 }
 
 .ubicaciones-list {
