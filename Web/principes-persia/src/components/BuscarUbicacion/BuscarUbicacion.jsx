@@ -20,6 +20,7 @@ const BuscarUbicacion = () => {
       setError("");
       recuperarUbicacion(searchQuery)
         .then((response) => {
+          console.log(response)
           setUbicacion(response);
         })
         .catch((error) => {
