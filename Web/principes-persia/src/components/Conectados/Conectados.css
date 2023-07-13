@@ -41,3 +41,9 @@
   font-size: 14px;
   margin-bottom: 5px;
 }
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
