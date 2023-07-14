@@ -32,7 +32,7 @@ const UbicacionEncontrada = ({ ubicacion }) => {
 
 UbicacionEncontrada.propTypes = {
   ubicacion: PropTypes.shape({
-    nombre: PropTypes.string.isRequired,
+    nombreDeLaUbicacion: PropTypes.string.isRequired,
     alerta: PropTypes.string.isRequired,
     latitud: PropTypes.number.isRequired,
     longitud: PropTypes.number.isRequired,
