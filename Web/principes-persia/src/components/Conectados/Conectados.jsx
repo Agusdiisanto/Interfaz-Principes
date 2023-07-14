@@ -7,7 +7,7 @@ import Loader from '../../utils/Loader/Loader';
 import Searcher from './Searcher';
 import Modal from '../../utils/Modal/Modal';
 import Notificacion from '../Subscripcion/Notificacion';
-import { getFirestore, collection, onSnapshot, query, where } from 'firebase/firestore';
+import { getFirestore, collection, onSnapshot, query, where,getDocs } from 'firebase/firestore';
 import { UbicacionContext } from '../../context/UbicacionContext';
 
 const Conectados = () => {
@@ -44,21 +44,22 @@ const Conectados = () => {
   }, [db, ubicacionesAPI]);
 
   useEffect(() => {
-    const checkAlerta = (ubicaciones) => {
-      const alertaRoja = ubicaciones.some((ubicacion) => ubicacion.alerta === 'Rojo');
-      const alertaAmarilla = ubicaciones.some((ubicacion) => ubicacion.alerta === 'Amarillo');
-
-      if (alertaRoja) {
-        setAlerta('Rojo');
-      } else if (alertaAmarilla) {
-        setAlerta('Amarillo');
+    const checkAlerta = async () => {
+      const ubicacionesRef = collection(db, 'ubicacion');
+      const alertaQuery = query(ubicacionesRef, where('alerta', 'in', ['Rojo', 'Amarillo']));
+  
+      const snapshot = await getDocs(alertaQuery);
+      const tieneAlerta = !snapshot.empty;
+  
+      if (tieneAlerta) {
+        setAlerta(snapshot.docs[0].data().alerta);
       } else {
         setAlerta(null);
       }
     };
-
-    checkAlerta(ubicaciones);
-  }, [ubicaciones]);
+  
+    checkAlerta();
+  }, []);
 
   const handleOpenModal = () => {
     setShowModal(true);
