@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-import "./UbicacionEncontrada.css"
+import "./UbicacionEncontrada.css";
 
 const UbicacionEncontrada = ({ ubicacion }) => {
   const opciones = ["Rojo", "Verde", "Amarillo"];
