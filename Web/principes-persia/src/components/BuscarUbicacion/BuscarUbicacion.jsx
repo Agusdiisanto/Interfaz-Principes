@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { recuperarUbicacion } from "../../services/Api";
-import Ubicacion from "../Ubicaciones/Ubicacion";
+import UbicacionEncontrada from "./UbicacionEncontrada";
 import "./BuscarUbicacion.css";
 import GoBack from "../../utils/GoBack";
 import Loader from "../../utils/Loader/Loader";
@@ -46,7 +46,7 @@ const BuscarUbicacion = () => {
       <div className="ubicaciones-body">
         <Searcher setQuery={setSearchQuery} />
         <div className="ubicacion-container">
-          {ubicacion !== null && <Ubicacion ubicacion={ubicacion} />}
+          {ubicacion !== null && <UbicacionEncontrada ubicacion={ubicacion} />}
         </div>
         {mensaje && searchQuery === mensaje.nombre && (
           <h2 className={`mensaje-alerta mensaje-${mensaje.alerta}`}>

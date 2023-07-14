@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
+import "./UbicacionEncontrada.css"
 
-const Ubicacion = ({ ubicacion, conectados = false }) => {
+const UbicacionEncontrada = ({ ubicacion }) => {
   const opciones = ["Rojo", "Verde", "Amarillo"];
   const [clase, setClase] = useState("");
 
@@ -21,23 +22,21 @@ const Ubicacion = ({ ubicacion, conectados = false }) => {
   const longitudRedondeada = redondearCoordenadas(ubicacion.longitud);
 
   return (
-    <div className="ubicacion-card">
-      <div className={`ubicacion-card-estado ${clase}`}></div>
-      <p className="ubicacion-card-elem ubicacion-name">{ubicacion.nombre}</p>
-      <p className="ubicacion-card-elem">{latitudRedondeada}</p>
-      <p className="ubicacion-card-elem">{longitudRedondeada}</p>
+    <div className={`ubicacion-box ${clase}`}>
+      <p className="ubicacion-box-elem box-name">{ubicacion.nombreDeLaUbicacion}</p>
+      <p className="ubicacion-box-elem">Latituld: {latitudRedondeada}</p>
+      <p className="ubicacion-box-elem">Longitud: {longitudRedondeada}</p>
     </div>
   );
 };
 
-Ubicacion.propTypes = {
+UbicacionEncontrada.propTypes = {
   ubicacion: PropTypes.shape({
     nombre: PropTypes.string.isRequired,
     alerta: PropTypes.string.isRequired,
     latitud: PropTypes.number.isRequired,
     longitud: PropTypes.number.isRequired,
   }).isRequired,
-  conectados: PropTypes.bool.isRequired,
 };
 
-export default Ubicacion;
+export default UbicacionEncontrada;

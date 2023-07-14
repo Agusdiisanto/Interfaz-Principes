@@ -76,6 +76,7 @@ const Subscribe = () => {
       <h1 className='title-container'>¡Suscríbete y recibe notificaciones!</h1>
       <div className='subscribe-scroll-container'>
         <Carousel
+          showStatus={false}
           showArrows={true}
           showThumbs={false}
           infiniteLoop={true}

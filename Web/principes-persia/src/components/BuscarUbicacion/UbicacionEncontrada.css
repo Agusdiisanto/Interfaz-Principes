@@ -1,0 +1,19 @@
+.ubicacion-box {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 35px;
+  font-family: helvetica, monospace;
+}
+
+.ubicacion-box-elem {
+  margin: 0px 0px 0px 0px;
+  font-size: 30px;
+}
+
+.box-name {
+  font-size: 40px;
+  font-weight: bold;
+}
