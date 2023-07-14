@@ -41,10 +41,10 @@ const BuscarUbicacion = () => {
 
   return (
     <div className="ubicaciones-container">
-      {isLoading && <Loader />}
       <h2 className="animate__animated animate__pulse title-container">Buscar ubicación</h2>
       <div className="ubicaciones-body">
         <Searcher setQuery={setSearchQuery} />
+        {isLoading && <Loader />}
         <div className="ubicacion-container">
           {ubicacion !== null && <UbicacionEncontrada ubicacion={ubicacion} />}
         </div>
