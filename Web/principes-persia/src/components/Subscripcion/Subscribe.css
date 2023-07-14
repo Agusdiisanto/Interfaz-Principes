@@ -186,3 +186,19 @@ button:active {
     right: 5px;
   }
 }
+
+@media (max-width: 768px) {
+  .carousel .carousel-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .carousel .carousel-arrow-prev {
+    left: 5px;
+  }
+
+  .carousel .carousel-arrow-next {
+    right: 5px;
+  }
+}
