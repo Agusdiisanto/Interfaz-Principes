@@ -18,7 +18,7 @@ Para correr la aplicacion, sigue estos pasos:
 2. Clona el repositorio ejecutando el siguiente comando en la consola:
 
 ```shell
-git clone [https://github.com/Agusdiisanto/unq-ui-AgustinDiSanto-Trabajo-final.git](https://github.com/Agusdiisanto/Interfaz-Principes.git)
+git clone https://github.com/Agusdiisanto/Interfaz-Principes.git
 ```
 
 Navega a la carpeta "Interfaz-Principes" y ejecuta el siguiente comando:
