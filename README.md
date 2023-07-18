@@ -17,18 +17,23 @@ Para correr la aplicacion, sigue estos pasos:
 
 2. Clona el repositorio ejecutando el siguiente comando en la consola:
 
-   ```shell
-   git clone https://github.com/Agusdiisanto/unq-ui-AgustinDiSanto-Trabajo-final.git
-   ```
-Navega a la carpeta "unq-ui-AgustinDiSanto-Trabajo-Final" y ejecuta el siguiente comando:
 ```shell
-cd piedra-papel-tijeras
+git clone [https://github.com/Agusdiisanto/unq-ui-AgustinDiSanto-Trabajo-final.git](https://github.com/Agusdiisanto/Interfaz-Principes.git)
+```
+
+Navega a la carpeta "Interfaz-Principes" y ejecuta el siguiente comando:
+```shell
+cd web
 ```
 Instala las dependencias ejecutando:
 
 ```shell
 npm install
 ```
+
+Asegurate de haber corrido la API : 
+
+Link: [[TFI 2023s1](https://github.com/unq-ui/material/blob/master/TFIs/2023s1-TFI.md)](https://github.com/EPERS-UNQ/Principes_de_EPERSia_TP/blob/main/enunciado/entrega6/entrega6.md)
 
 Finalmente, ejecuta el proyecto:
 
