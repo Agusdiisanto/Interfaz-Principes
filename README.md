@@ -4,7 +4,7 @@ Este proyecto es sobre un trabajo final, donde la aplicacion interactua con la b
 
 ## Enunciado
 
-Link: (https://github.com/Agusdiisanto/Persistencia-Datos)
+Link: https://github.com/Agusdiisanto/Persistencia-Datos
 
 ## ¿Cómo correr la aplicacion?
 
