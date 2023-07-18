@@ -42,5 +42,12 @@ Abre tu navegador y juega ingresando a:
 http://localhost:5173/
 ```
 
+<span color ="red"> IMPORTANTE : <span/> Asegurate de haber corrido la API 
 
+Elaborado por : 
+
+- Santiago Abregú
+- Manuel Dobrotinich
+- Julitera Jara
+- Agustin Di Santo
 
