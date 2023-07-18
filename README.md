@@ -31,9 +31,9 @@ Instala las dependencias ejecutando:
 npm install
 ```
 
-Asegurate de haber corrido la API : 
+Asegurate de haber corrido la API :
 
-Link: [TFI 2023s1](https://github.com/EPERS-UNQ/Principes_de_EPERSia_TP)
+Link: [[TFI 2023s1](https://github.com/EPERS-UNQ/Principes_de_EPERSia_TP)](https://github.com/Agusdiisanto/Persistencia-Datos/tree/main/Prinicipes-De-EPERSia)
 
 Finalmente, ejecuta el proyecto:
 
