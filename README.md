@@ -4,7 +4,7 @@ Este proyecto es sobre un trabajo final, donde la aplicacion interactua con la b
 
 ## Enunciado
 
-Link: [[TFI 2023s1](https://github.com/Agusdiisanto/Persistencia-Datos/blob/main/Prinicipes-De-EPERSia/enunciado/entrega6/entrega6.md)](https://github.com/Agusdiisanto/Persistencia-Datos)
+Link: (https://github.com/Agusdiisanto/Persistencia-Datos)
 
 ## ¿Cómo correr la aplicacion?
 
