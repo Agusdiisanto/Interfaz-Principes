@@ -4,7 +4,7 @@ Este proyecto es sobre un trabajo final, donde la aplicacion interactua con la b
 
 ## Enunciado
 
-Link: [[TFI 2023s1](https://github.com/unq-ui/material/blob/master/TFIs/2023s1-TFI.md)](https://github.com/EPERS-UNQ/Principes_de_EPERSia_TP/blob/main/enunciado/entrega6/entrega6.md)
+Link: [TFI 2023s1](https://github.com/EPERS-UNQ/Principes_de_EPERSia_TP/blob/main/enunciado/entrega6/entrega6.md)
 
 ## ¿Cómo correr la aplicacion?
 
@@ -33,7 +33,7 @@ npm install
 
 Asegurate de haber corrido la API : 
 
-Link: [[TFI 2023s1](https://github.com/unq-ui/material/blob/master/TFIs/2023s1-TFI.md)](https://github.com/EPERS-UNQ/Principes_de_EPERSia_TP/blob/main/enunciado/entrega6/entrega6.md)
+Link: [TFI 2023s1](https://github.com/EPERS-UNQ/Principes_de_EPERSia_TP)
 
 Finalmente, ejecuta el proyecto:
 
