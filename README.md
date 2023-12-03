@@ -1,6 +1,8 @@
 # Interfaz Grafica Final Persistencia
 
-Este proyecto es sobre un trabajo final, donde la aplicacion interactua con distintas bases de datos
+Este proyecto es sobre un trabajo final donde se tuvo que implementar una nueva base de datos nueva (Firebase) junto a una interfaz grafica.
+En esta interfaz se encuentra un Mapa de calor entre otras herramientas donde su principal objetivo es interactuar con diferentes 
+bases de datos
 
 ## Enunciado
 
