@@ -1,6 +1,6 @@
-# Interfaz Grafica
+# Interfaz Grafica Final Persistencia
 
-Este proyecto es sobre un trabajo final, donde la aplicacion interactua con la base de datos
+Este proyecto es sobre un trabajo final, donde la aplicacion interactua con distintas bases de datos
 
 ## Enunciado
 
